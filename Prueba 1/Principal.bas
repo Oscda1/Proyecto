@@ -27,7 +27,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("PrincipalLayout")
 	Contenido=File.ReadString(File.DirAssets,"eventos.txt")
-	If (Contenido<>Null) Then
+	If (Contenido<>"") Then
 		Existen=True
 	Else
 		Existen=False
