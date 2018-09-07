@@ -53,27 +53,27 @@ starter,service_taskremoved,0,0,23,25
 
 
 
-principal,activity_create,1,1,20,34
-,eventos,,plusevento,,contenido,,existen
-,eventos,,plusevento,,contenido,,existen
+principal,activity_create,1,1,42,151
+,detalleseventos,,eventos,,eventospanel,,plusevento,,contenido,,totalcaracteres,,cantidadcaracteres,,contador1,,contador2,,contador3,,contador4,,seccion,,nombreevento,,fechaevento,,horaevento,,tipoevento,,nombredeldocumento,,conferencista,,dospuntos,,todoslosgrupos,,existen,,cargarevento,,temporal,,numerodeinicio,,puntoycoma,,cantidadgrupos
+,detalleseventos,,eventos,,eventospanel,,plusevento,,contenido,,totalcaracteres,,cantidadcaracteres,,contador1,,contador2,,contador3,,contador4,,seccion,,nombreevento,,fechaevento,,horaevento,,tipoevento,,nombredeldocumento,,conferencista,,dospuntos,,todoslosgrupos,,existen,,cargarevento,,temporal,,numerodeinicio,,puntoycoma,,cantidadgrupos
 
-principal,activity_pause,0,0,40,42
-
-
-
-principal,activity_resume,0,0,36,38
+principal,activity_pause,0,0,157,159
 
 
 
-principal,globals,0,1,13,18
+principal,activity_resume,0,0,153,155
 
 
 
-principal,plusevento_click,0,0,45,47
+principal,globals,0,1,33,40
 
 
 
-principal,process_globals,0,1,6,11
+principal,plusevento_click,0,0,162,164
+
+
+
+principal,process_globals,0,1,6,31
 
 
 

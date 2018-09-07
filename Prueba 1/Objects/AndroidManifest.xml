@@ -19,13 +19,13 @@
 	<uses-permission android:name="android.permission.WAKE_LOCK"/>
 	<application
 		android:icon="@drawable/icon"
-		android:label="B4A Example"
+		android:label="Proyecto Servicio Social"
 		android:theme="@style/DarkTheme">
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".main"
-			android:label="B4A Example"
+			android:label="Proyecto Servicio Social"
 			android:screenOrientation="unspecified">
 			<intent-filter>
 			   <action android:name="android.intent.action.MAIN" />
@@ -41,7 +41,7 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".principal"
-			android:label="B4A Example"
+			android:label="Proyecto Servicio Social"
 			android:screenOrientation="unspecified">
 		</activity>
 		<service android:name="anywheresoftware.b4a.samples.httputils2.httputils2service">

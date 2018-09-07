@@ -25,7 +25,7 @@ NumberOfModules=2
 Version=8.3
 @EndOfDesignText@
 	#Region  Project Attributes 
-	#ApplicationLabel: B4A Example
+	#ApplicationLabel: Proyecto Servicio Social
 	#VersionCode: 1
 	#VersionName: 
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
@@ -35,7 +35,7 @@ Version=8.3
 
 #Region  Activity Attributes 
 	#FullScreen: False
-	#IncludeTitle: True
+	#IncludeTitle: False
 #End Region
 
 Sub Process_Globals
