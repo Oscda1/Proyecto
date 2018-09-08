@@ -53,7 +53,7 @@ starter,service_taskremoved,0,0,23,25
 
 
 
-principal,activity_create,1,1,42,151
+principal,activity_create,1,0,42,151
 ,detalleseventos,,eventos,,eventospanel,,plusevento,,contenido,,totalcaracteres,,cantidadcaracteres,,contador1,,contador2,,contador3,,contador4,,seccion,,nombreevento,,fechaevento,,horaevento,,tipoevento,,nombredeldocumento,,conferencista,,dospuntos,,todoslosgrupos,,existen,,cargarevento,,temporal,,numerodeinicio,,puntoycoma,,cantidadgrupos
 ,detalleseventos,,eventos,,eventospanel,,plusevento,,contenido,,totalcaracteres,,cantidadcaracteres,,contador1,,contador2,,contador3,,contador4,,seccion,,nombreevento,,fechaevento,,horaevento,,tipoevento,,nombredeldocumento,,conferencista,,dospuntos,,todoslosgrupos,,existen,,cargarevento,,temporal,,numerodeinicio,,puntoycoma,,cantidadgrupos
 
@@ -74,6 +74,26 @@ principal,plusevento_click,0,0,162,164
 
 
 principal,process_globals,0,1,6,31
+
+
+
+principal2,activity_create,1,1,37,124
+,detalleseventos,,eventos,,eventospanel,,plusevento,,despliegagrupos,,secciongrupo,,cantidadgrupos,,seccion,,letratemporal,,contadorcaracter,,dospuntos,,nombreevento,,fechaevento,,horaevento,,nombredocumento,,conferencista,,tipoevento,,iniciogrupos,,primeravezengrupos,,contenido
+,detalleseventos,,eventos,,eventospanel,,plusevento,,despliegagrupos,,secciongrupo,,cantidadgrupos,,seccion,,letratemporal,,contadorcaracter,,dospuntos,,nombreevento,,fechaevento,,horaevento,,nombredocumento,,conferencista,,tipoevento,,iniciogrupos,,primeravezengrupos,,contenido
+
+principal2,activity_pause,0,0,130,132
+
+
+
+principal2,activity_resume,0,0,126,128
+
+
+
+principal2,globals,0,1,27,35
+
+
+
+principal2,process_globals,0,1,6,25
 
 
 

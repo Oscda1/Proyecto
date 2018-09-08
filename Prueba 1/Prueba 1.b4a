@@ -9,19 +9,16 @@ Group=Default Group
 IconFile=
 Library1=core
 Library2=dateutils
-Library3=network
-Library4=okhttp
-Library5=okhttputils2
-Library6=sql
-Library7=calendar2
-Library8=abwifi
-Library9=mlwifi
+Library3=calendar2
+Library4=abwifi
+Library5=mlwifi
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~'End of default text.~\n~
 Module1=Starter
 Module2=Principal
+Module3=Principal2
 NumberOfFiles=3
-NumberOfLibraries=9
-NumberOfModules=2
+NumberOfLibraries=5
+NumberOfModules=3
 Version=8.3
 @EndOfDesignText@
 	#Region  Project Attributes 
@@ -75,7 +72,7 @@ Sub CheckForWiFi
 End Sub
 
 Sub tiempo_Tick
-	StartActivity(Principal)
+	StartActivity(Principal2)
 End Sub
 
 Sub Activity_Resume

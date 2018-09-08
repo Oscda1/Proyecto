@@ -59,10 +59,10 @@ public static RemoteObject _conexionainternet = RemoteObject.createImmutable(fal
 public static RemoteObject _tiempo = RemoteObject.declareNull("anywheresoftware.b4a.objects.Timer");
 public static RemoteObject _conexion = RemoteObject.declareNull("wifi.MLwifi");
 public static RemoteObject _dateutils = RemoteObject.declareNull("b4a.example.dateutils");
-public static RemoteObject _httputils2service = RemoteObject.declareNull("anywheresoftware.b4a.samples.httputils2.httputils2service");
 public static b4a.example.starter _starter = null;
 public static b4a.example.principal _principal = null;
+public static b4a.example.principal2 _principal2 = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",main.mostCurrent._activity,"Conexion",main._conexion,"ConexionAInternet",main._conexionainternet,"DateUtils",main.mostCurrent._dateutils,"HttpUtils2Service",main.mostCurrent._httputils2service,"Principal",Debug.moduleToString(b4a.example.principal.class),"Starter",Debug.moduleToString(b4a.example.starter.class),"tiempo",main._tiempo};
+		return new Object[] {"Activity",main.mostCurrent._activity,"Conexion",main._conexion,"ConexionAInternet",main._conexionainternet,"DateUtils",main.mostCurrent._dateutils,"Principal",Debug.moduleToString(b4a.example.principal.class),"Principal2",Debug.moduleToString(b4a.example.principal2.class),"Starter",Debug.moduleToString(b4a.example.starter.class),"tiempo",main._tiempo};
 }
 }

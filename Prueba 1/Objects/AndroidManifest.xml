@@ -16,7 +16,6 @@
 	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-	<uses-permission android:name="android.permission.WAKE_LOCK"/>
 	<application
 		android:icon="@drawable/icon"
 		android:label="Proyecto Servicio Social"
@@ -44,9 +43,12 @@
 			android:label="Proyecto Servicio Social"
 			android:screenOrientation="unspecified">
 		</activity>
-		<service android:name="anywheresoftware.b4a.samples.httputils2.httputils2service">
-		</service>
-		<receiver android:name="anywheresoftware.b4a.samples.httputils2.httputils2service$httputils2service_BR">
-		</receiver>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".principal2"
+			android:label="Proyecto Servicio Social"
+			android:screenOrientation="unspecified">
+		</activity>
 	</application>
 </manifest>

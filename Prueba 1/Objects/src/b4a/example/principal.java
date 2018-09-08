@@ -365,9 +365,9 @@ public anywheresoftware.b4a.objects.ButtonWrapper _plusevento = null;
 public anywheresoftware.b4a.objects.LabelWrapper _detalleseventos = null;
 public anywheresoftware.b4a.objects.PanelWrapper _eventospanel = null;
 public b4a.example.dateutils _dateutils = null;
-public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
+public b4a.example.principal2 _principal2 = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="principal";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
