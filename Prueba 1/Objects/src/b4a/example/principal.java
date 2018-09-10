@@ -368,6 +368,7 @@ public b4a.example.dateutils _dateutils = null;
 public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
 public b4a.example.principal2 _principal2 = null;
+public b4a.example.principal3 _principal3 = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="principal";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
@@ -484,9 +485,6 @@ case 0: {
 RDebugUtils.currentLine=983081;
  //BA.debugLineNum = 983081;BA.debugLine="Contador3=Contador3+1";
 _contador3 = (int) (_contador3+1);
-RDebugUtils.currentLine=983082;
- //BA.debugLineNum = 983082;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 1: {
 RDebugUtils.currentLine=983084;
@@ -508,17 +506,11 @@ case 0: {
 RDebugUtils.currentLine=983090;
  //BA.debugLineNum = 983090;BA.debugLine="DosPuntos=True";
 _dospuntos = anywheresoftware.b4a.keywords.Common.True;
-RDebugUtils.currentLine=983091;
- //BA.debugLineNum = 983091;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 1: {
 RDebugUtils.currentLine=983093;
  //BA.debugLineNum = 983093;BA.debugLine="CantidadGrupos=CantidadGrupos+1";
 _cantidadgrupos = (int) (_cantidadgrupos+1);
-RDebugUtils.currentLine=983094;
- //BA.debugLineNum = 983094;BA.debugLine="Exit";
-if (true) break;
  break; }
 }
 ;
@@ -551,17 +543,11 @@ _dospuntos = anywheresoftware.b4a.keywords.Common.True;
 RDebugUtils.currentLine=983105;
  //BA.debugLineNum = 983105;BA.debugLine="CargarEvento=True";
 _cargarevento = anywheresoftware.b4a.keywords.Common.True;
-RDebugUtils.currentLine=983106;
- //BA.debugLineNum = 983106;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 1: {
 RDebugUtils.currentLine=983108;
  //BA.debugLineNum = 983108;BA.debugLine="Contador2=Contador2+1";
 _contador2 = (int) (_contador2+1);
-RDebugUtils.currentLine=983109;
- //BA.debugLineNum = 983109;BA.debugLine="Exit";
-if (true) break;
  break; }
 default: {
 RDebugUtils.currentLine=983111;
@@ -583,49 +569,31 @@ case 0: {
 RDebugUtils.currentLine=983118;
  //BA.debugLineNum = 983118;BA.debugLine="NombreEvento=NombreEvento&Temporal";
 _nombreevento = _nombreevento+_temporal;
-RDebugUtils.currentLine=983119;
- //BA.debugLineNum = 983119;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 1: {
 RDebugUtils.currentLine=983121;
  //BA.debugLineNum = 983121;BA.debugLine="FechaEvento=FechaEvento&Temporal";
 _fechaevento = _fechaevento+_temporal;
-RDebugUtils.currentLine=983122;
- //BA.debugLineNum = 983122;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 2: {
 RDebugUtils.currentLine=983124;
  //BA.debugLineNum = 983124;BA.debugLine="HoraEvento=HoraEvento&Temporal";
 _horaevento = _horaevento+_temporal;
-RDebugUtils.currentLine=983125;
- //BA.debugLineNum = 983125;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 3: {
 RDebugUtils.currentLine=983127;
  //BA.debugLineNum = 983127;BA.debugLine="TipoEvento=TipoEvento&Temporal";
 _tipoevento = _tipoevento+_temporal;
-RDebugUtils.currentLine=983128;
- //BA.debugLineNum = 983128;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 4: {
 RDebugUtils.currentLine=983130;
  //BA.debugLineNum = 983130;BA.debugLine="NombreDelDocumento=NombreDelDocumento&Tempo";
 _nombredeldocumento = _nombredeldocumento+_temporal;
-RDebugUtils.currentLine=983131;
- //BA.debugLineNum = 983131;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 5: {
 RDebugUtils.currentLine=983133;
  //BA.debugLineNum = 983133;BA.debugLine="Conferencista=Conferencista&Temporal";
 _conferencista = _conferencista+_temporal;
-RDebugUtils.currentLine=983134;
- //BA.debugLineNum = 983134;BA.debugLine="Exit";
-if (true) break;
  break; }
 }
 ;

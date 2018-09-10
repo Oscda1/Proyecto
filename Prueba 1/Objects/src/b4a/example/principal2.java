@@ -362,6 +362,7 @@ public b4a.example.dateutils _dateutils = null;
 public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
 public b4a.example.principal _principal = null;
+public b4a.example.principal3 _principal3 = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="principal2";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
@@ -421,8 +422,8 @@ RDebugUtils.currentLine=1376274;
  //BA.debugLineNum = 1376274;BA.debugLine="Contenido=File.ReadString(File.DirAssets,\"eventos";
 _contenido = anywheresoftware.b4a.keywords.Common.File.ReadString(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"eventos.txt");
 RDebugUtils.currentLine=1376275;
- //BA.debugLineNum = 1376275;BA.debugLine="If (Contenido<>\"\") Then";
-if (((_contenido).equals("") == false)) { 
+ //BA.debugLineNum = 1376275;BA.debugLine="If Contenido<>\"\" Then";
+if ((_contenido).equals("") == false) { 
 RDebugUtils.currentLine=1376276;
  //BA.debugLineNum = 1376276;BA.debugLine="EventosPanel.Visible=True";
 mostCurrent._eventospanel.setVisible(anywheresoftware.b4a.keywords.Common.True);
@@ -430,8 +431,8 @@ RDebugUtils.currentLine=1376277;
  //BA.debugLineNum = 1376277;BA.debugLine="Eventos.Visible=False";
 mostCurrent._eventos.setVisible(anywheresoftware.b4a.keywords.Common.False);
 RDebugUtils.currentLine=1376278;
- //BA.debugLineNum = 1376278;BA.debugLine="Do While (DosPuntos=False)";
-while ((_dospuntos==anywheresoftware.b4a.keywords.Common.False)) {
+ //BA.debugLineNum = 1376278;BA.debugLine="Do While DosPuntos=False";
+while (_dospuntos==anywheresoftware.b4a.keywords.Common.False) {
 RDebugUtils.currentLine=1376279;
  //BA.debugLineNum = 1376279;BA.debugLine="ContadorCaracter=ContadorCaracter+1";
 _contadorcaracter = (int) (_contadorcaracter+1);
@@ -439,8 +440,8 @@ RDebugUtils.currentLine=1376280;
  //BA.debugLineNum = 1376280;BA.debugLine="LetraTemporal=Contenido.SubString(ContadorCaract";
 _letratemporal = _contenido.substring(_contadorcaracter);
 RDebugUtils.currentLine=1376281;
- //BA.debugLineNum = 1376281;BA.debugLine="Select (LetraTemporal)";
-switch (BA.switchObjectToInt((_letratemporal),"-",":")) {
+ //BA.debugLineNum = 1376281;BA.debugLine="Select LetraTemporal";
+switch (BA.switchObjectToInt(_letratemporal,"-",":")) {
 case 0: {
 RDebugUtils.currentLine=1376283;
  //BA.debugLineNum = 1376283;BA.debugLine="Seccion=Seccion+1";
@@ -448,80 +449,56 @@ _seccion = (int) (_seccion+1);
 RDebugUtils.currentLine=1376284;
  //BA.debugLineNum = 1376284;BA.debugLine="Log(Seccion)";
 anywheresoftware.b4a.keywords.Common.Log(BA.NumberToString(_seccion));
-RDebugUtils.currentLine=1376285;
- //BA.debugLineNum = 1376285;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 1: {
 RDebugUtils.currentLine=1376287;
  //BA.debugLineNum = 1376287;BA.debugLine="DosPuntos=True";
 _dospuntos = anywheresoftware.b4a.keywords.Common.True;
-RDebugUtils.currentLine=1376288;
- //BA.debugLineNum = 1376288;BA.debugLine="Exit";
-if (true) break;
  break; }
 default: {
 RDebugUtils.currentLine=1376290;
- //BA.debugLineNum = 1376290;BA.debugLine="Select (Seccion)";
-switch (BA.switchObjectToInt((_seccion),(int) (0),(int) (1),(int) (2),(int) (3),(int) (4),(int) (5),(int) (6))) {
+ //BA.debugLineNum = 1376290;BA.debugLine="Select Seccion";
+switch (_seccion) {
 case 0: {
 RDebugUtils.currentLine=1376292;
  //BA.debugLineNum = 1376292;BA.debugLine="NombreEvento=NombreEvento&LetraTemporal";
 _nombreevento = _nombreevento+_letratemporal;
-RDebugUtils.currentLine=1376293;
- //BA.debugLineNum = 1376293;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 1: {
 RDebugUtils.currentLine=1376295;
  //BA.debugLineNum = 1376295;BA.debugLine="FechaEvento=FechaEvento&LetraTemporal";
 _fechaevento = _fechaevento+_letratemporal;
-RDebugUtils.currentLine=1376296;
- //BA.debugLineNum = 1376296;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 2: {
 RDebugUtils.currentLine=1376298;
  //BA.debugLineNum = 1376298;BA.debugLine="HoraEvento=HoraEvento&LetraTemporal";
 _horaevento = _horaevento+_letratemporal;
-RDebugUtils.currentLine=1376299;
- //BA.debugLineNum = 1376299;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 3: {
 RDebugUtils.currentLine=1376301;
  //BA.debugLineNum = 1376301;BA.debugLine="TipoEvento=TipoEvento&LetraTemporal";
 _tipoevento = _tipoevento+_letratemporal;
-RDebugUtils.currentLine=1376302;
- //BA.debugLineNum = 1376302;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 4: {
 RDebugUtils.currentLine=1376304;
  //BA.debugLineNum = 1376304;BA.debugLine="NombreDocumento=NombreDocumento&LetraTempora";
 _nombredocumento = _nombredocumento+_letratemporal;
-RDebugUtils.currentLine=1376305;
- //BA.debugLineNum = 1376305;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 5: {
 RDebugUtils.currentLine=1376307;
  //BA.debugLineNum = 1376307;BA.debugLine="Conferencista=Conferencista&LetraTemporal";
 _conferencista = _conferencista+_letratemporal;
-RDebugUtils.currentLine=1376308;
- //BA.debugLineNum = 1376308;BA.debugLine="Exit";
-if (true) break;
  break; }
 case 6: {
 RDebugUtils.currentLine=1376310;
- //BA.debugLineNum = 1376310;BA.debugLine="If (PrimeraVezEnGrupos) Then";
-if ((_primeravezengrupos)) { 
+ //BA.debugLineNum = 1376310;BA.debugLine="If PrimeraVezEnGrupos Then";
+if (_primeravezengrupos) { 
 RDebugUtils.currentLine=1376311;
  //BA.debugLineNum = 1376311;BA.debugLine="InicioGrupos=ContadorCaracter";
 _iniciogrupos = _contadorcaracter;
 RDebugUtils.currentLine=1376312;
- //BA.debugLineNum = 1376312;BA.debugLine="Do While(PrimeraVezEnGrupos=True)";
-while ((_primeravezengrupos==anywheresoftware.b4a.keywords.Common.True)) {
+ //BA.debugLineNum = 1376312;BA.debugLine="Do While PrimeraVezEnGrupos=True";
+while (_primeravezengrupos==anywheresoftware.b4a.keywords.Common.True) {
 RDebugUtils.currentLine=1376313;
  //BA.debugLineNum = 1376313;BA.debugLine="InicioGrupos=InicioGrupos+1";
 _iniciogrupos = (int) (_iniciogrupos+1);
@@ -529,15 +506,15 @@ RDebugUtils.currentLine=1376314;
  //BA.debugLineNum = 1376314;BA.debugLine="LetraTemporal=Contenido.SubString(InicioGr";
 _letratemporal = _contenido.substring(_iniciogrupos);
 RDebugUtils.currentLine=1376315;
- //BA.debugLineNum = 1376315;BA.debugLine="If (LetraTemporal=\";\") Then";
-if (((_letratemporal).equals(";"))) { 
+ //BA.debugLineNum = 1376315;BA.debugLine="If LetraTemporal=\";\" Then";
+if ((_letratemporal).equals(";")) { 
 RDebugUtils.currentLine=1376316;
  //BA.debugLineNum = 1376316;BA.debugLine="CantidadGrupos=CantidadGrupos+1";
 _cantidadgrupos = (int) (_cantidadgrupos+1);
  }else 
 {RDebugUtils.currentLine=1376317;
- //BA.debugLineNum = 1376317;BA.debugLine="Else If (LetraTemporal=\":\") Then";
-if (((_letratemporal).equals(":"))) { 
+ //BA.debugLineNum = 1376317;BA.debugLine="Else If LetraTemporal=\":\" Then";
+if ((_letratemporal).equals(":")) { 
 RDebugUtils.currentLine=1376318;
  //BA.debugLineNum = 1376318;BA.debugLine="PrimeraVezEnGrupos=False";
 _primeravezengrupos = anywheresoftware.b4a.keywords.Common.False;
@@ -551,8 +528,8 @@ _grupos = new String[_cantidadgrupos];
 java.util.Arrays.fill(_grupos,"");
  }else {
 RDebugUtils.currentLine=1376323;
- //BA.debugLineNum = 1376323;BA.debugLine="If (LetraTemporal<>\";\") Then";
-if (((_letratemporal).equals(";") == false)) { 
+ //BA.debugLineNum = 1376323;BA.debugLine="If LetraTemporal<>\";\" Then";
+if ((_letratemporal).equals(";") == false) { 
 RDebugUtils.currentLine=1376324;
  //BA.debugLineNum = 1376324;BA.debugLine="Grupos(SeccionGrupo)=LetraTemporal";
 _grupos[_secciongrupo] = _letratemporal;
@@ -562,15 +539,9 @@ RDebugUtils.currentLine=1376326;
 _secciongrupo = (int) (_secciongrupo+1);
  };
  };
-RDebugUtils.currentLine=1376329;
- //BA.debugLineNum = 1376329;BA.debugLine="Exit";
-if (true) break;
  break; }
 }
 ;
-RDebugUtils.currentLine=1376331;
- //BA.debugLineNum = 1376331;BA.debugLine="Exit";
-if (true) break;
  break; }
 }
 ;
@@ -580,8 +551,8 @@ RDebugUtils.currentLine=1376334;
  //BA.debugLineNum = 1376334;BA.debugLine="DetallesEventos.Text=NombreEvento&CRLF&FechaEven";
 mostCurrent._detalleseventos.setText(BA.ObjectToCharSequence(_nombreevento+anywheresoftware.b4a.keywords.Common.CRLF+_fechaevento+anywheresoftware.b4a.keywords.Common.CRLF+_horaevento+anywheresoftware.b4a.keywords.Common.CRLF+_tipoevento+anywheresoftware.b4a.keywords.Common.CRLF+_nombredocumento+anywheresoftware.b4a.keywords.Common.CRLF+_conferencista+anywheresoftware.b4a.keywords.Common.CRLF));
 RDebugUtils.currentLine=1376335;
- //BA.debugLineNum = 1376335;BA.debugLine="Do While(DespliegaGrupos<>CantidadGrupos)";
-while ((_despliegagrupos!=_cantidadgrupos)) {
+ //BA.debugLineNum = 1376335;BA.debugLine="Do While DespliegaGrupos<>CantidadGrupos";
+while (_despliegagrupos!=_cantidadgrupos) {
 RDebugUtils.currentLine=1376336;
  //BA.debugLineNum = 1376336;BA.debugLine="DetallesEventos.Text=Eventos.Text&Grupos(Desplie";
 mostCurrent._detalleseventos.setText(BA.ObjectToCharSequence(mostCurrent._eventos.getText()+_grupos[_despliegagrupos]));

@@ -123,9 +123,6 @@ case 0: {
  BA.debugLineNum = 83;BA.debugLine="Contador3=Contador3+1";
 Debug.ShouldStop(262144);
 principal._contador3 = RemoteObject.solve(new RemoteObject[] {principal._contador3,RemoteObject.createImmutable(1)}, "+",1, 1);
- BA.debugLineNum = 84;BA.debugLine="Exit";
-Debug.ShouldStop(524288);
-if (true) break;
  break; }
 case 1: {
  BA.debugLineNum = 86;BA.debugLine="NumeroDeInicio=Contador1+1";
@@ -147,17 +144,11 @@ case 0: {
  BA.debugLineNum = 92;BA.debugLine="DosPuntos=True";
 Debug.ShouldStop(134217728);
 principal._dospuntos = principal.mostCurrent.__c.getField(true,"True");
- BA.debugLineNum = 93;BA.debugLine="Exit";
-Debug.ShouldStop(268435456);
-if (true) break;
  break; }
 case 1: {
  BA.debugLineNum = 95;BA.debugLine="CantidadGrupos=CantidadGrupos+1";
 Debug.ShouldStop(1073741824);
 principal._cantidadgrupos = RemoteObject.solve(new RemoteObject[] {principal._cantidadgrupos,RemoteObject.createImmutable(1)}, "+",1, 1);
- BA.debugLineNum = 96;BA.debugLine="Exit";
-Debug.ShouldStop(-2147483648);
-if (true) break;
  break; }
 }
 ;
@@ -189,17 +180,11 @@ principal._dospuntos = principal.mostCurrent.__c.getField(true,"True");
  BA.debugLineNum = 107;BA.debugLine="CargarEvento=True";
 Debug.ShouldStop(1024);
 principal._cargarevento = principal.mostCurrent.__c.getField(true,"True");
- BA.debugLineNum = 108;BA.debugLine="Exit";
-Debug.ShouldStop(2048);
-if (true) break;
  break; }
 case 1: {
  BA.debugLineNum = 110;BA.debugLine="Contador2=Contador2+1";
 Debug.ShouldStop(8192);
 principal._contador2 = RemoteObject.solve(new RemoteObject[] {principal._contador2,RemoteObject.createImmutable(1)}, "+",1, 1);
- BA.debugLineNum = 111;BA.debugLine="Exit";
-Debug.ShouldStop(16384);
-if (true) break;
  break; }
 default: {
  BA.debugLineNum = 113;BA.debugLine="Grupos(Contador2)=Grupos(Contador2)+Punto";
@@ -221,49 +206,31 @@ case 0: {
  BA.debugLineNum = 120;BA.debugLine="NombreEvento=NombreEvento&Temporal";
 Debug.ShouldStop(8388608);
 principal._nombreevento = RemoteObject.concat(principal._nombreevento,principal._temporal);
- BA.debugLineNum = 121;BA.debugLine="Exit";
-Debug.ShouldStop(16777216);
-if (true) break;
  break; }
 case 1: {
  BA.debugLineNum = 123;BA.debugLine="FechaEvento=FechaEvento&Temporal";
 Debug.ShouldStop(67108864);
 principal._fechaevento = RemoteObject.concat(principal._fechaevento,principal._temporal);
- BA.debugLineNum = 124;BA.debugLine="Exit";
-Debug.ShouldStop(134217728);
-if (true) break;
  break; }
 case 2: {
  BA.debugLineNum = 126;BA.debugLine="HoraEvento=HoraEvento&Temporal";
 Debug.ShouldStop(536870912);
 principal._horaevento = RemoteObject.concat(principal._horaevento,principal._temporal);
- BA.debugLineNum = 127;BA.debugLine="Exit";
-Debug.ShouldStop(1073741824);
-if (true) break;
  break; }
 case 3: {
  BA.debugLineNum = 129;BA.debugLine="TipoEvento=TipoEvento&Temporal";
 Debug.ShouldStop(1);
 principal._tipoevento = RemoteObject.concat(principal._tipoevento,principal._temporal);
- BA.debugLineNum = 130;BA.debugLine="Exit";
-Debug.ShouldStop(2);
-if (true) break;
  break; }
 case 4: {
  BA.debugLineNum = 132;BA.debugLine="NombreDelDocumento=NombreDelDocumento&Tempo";
 Debug.ShouldStop(8);
 principal._nombredeldocumento = RemoteObject.concat(principal._nombredeldocumento,principal._temporal);
- BA.debugLineNum = 133;BA.debugLine="Exit";
-Debug.ShouldStop(16);
-if (true) break;
  break; }
 case 5: {
  BA.debugLineNum = 135;BA.debugLine="Conferencista=Conferencista&Temporal";
 Debug.ShouldStop(64);
 principal._conferencista = RemoteObject.concat(principal._conferencista,principal._temporal);
- BA.debugLineNum = 136;BA.debugLine="Exit";
-Debug.ShouldStop(128);
-if (true) break;
  break; }
 }
 ;

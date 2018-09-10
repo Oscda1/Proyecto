@@ -59,67 +59,67 @@ Sub Activity_Create(FirstTime As Boolean)
 	InicioGrupos=0
 	PrimeraVezEnGrupos=True
 	Contenido=File.ReadString(File.DirAssets,"eventos.txt")
-	If (Contenido<>"") Then
+	If Contenido<>"" Then
 		EventosPanel.Visible=True
 		Eventos.Visible=False
-	Do While (DosPuntos=False)
+	Do While DosPuntos=False
 		ContadorCaracter=ContadorCaracter+1
 		LetraTemporal=Contenido.SubString(ContadorCaracter)
-		Select (LetraTemporal)
+		Select LetraTemporal
 			Case "-"
 				Seccion=Seccion+1
 				Log(Seccion)
-				Exit
+				
 			Case ":"
 				DosPuntos=True
-				Exit
+				
 			Case Else
-				Select (Seccion)
+				Select Seccion
 					Case 0
 						NombreEvento=NombreEvento&LetraTemporal
-						Exit
+						
 					Case 1
 						FechaEvento=FechaEvento&LetraTemporal
-						Exit
+						
 					Case 2
 						HoraEvento=HoraEvento&LetraTemporal
-						Exit
+						
 					Case 3
 						TipoEvento=TipoEvento&LetraTemporal
-						Exit
+						
 					Case 4
 						NombreDocumento=NombreDocumento&LetraTemporal
-						Exit
+						
 					Case 5
 						Conferencista=Conferencista&LetraTemporal
-						Exit
+					
 					Case 6
-						If (PrimeraVezEnGrupos) Then
+						If PrimeraVezEnGrupos Then
 							InicioGrupos=ContadorCaracter
-							Do While(PrimeraVezEnGrupos=True)
+							Do While PrimeraVezEnGrupos=True
 								InicioGrupos=InicioGrupos+1
 								LetraTemporal=Contenido.SubString(InicioGrupos)
-								If (LetraTemporal=";") Then
+								If LetraTemporal=";" Then
 									CantidadGrupos=CantidadGrupos+1
-								Else If (LetraTemporal=":") Then
+								Else If LetraTemporal=":" Then
 									PrimeraVezEnGrupos=False
 								End If
 							Loop
 							Dim Grupos(CantidadGrupos) As String
 							Else
-								If (LetraTemporal<>";") Then
+								If LetraTemporal<>";" Then
 									Grupos(SeccionGrupo)=LetraTemporal
 								Else
 									SeccionGrupo=SeccionGrupo+1
 								End If
 						End If
-						Exit
+						
 				End Select
-				Exit
+				
 		End Select
 	Loop
 		DetallesEventos.Text=NombreEvento&CRLF&FechaEvento&CRLF&HoraEvento&CRLF&TipoEvento&CRLF&NombreDocumento&CRLF&Conferencista&CRLF
-	Do While(DespliegaGrupos<>CantidadGrupos)
+	Do While DespliegaGrupos<>CantidadGrupos
 		DetallesEventos.Text=Eventos.Text&Grupos(DespliegaGrupos)
 		DespliegaGrupos=DespliegaGrupos+1
 	Loop

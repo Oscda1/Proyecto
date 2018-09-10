@@ -50,7 +50,8 @@ public static RemoteObject _dateutils = RemoteObject.declareNull("b4a.example.da
 public static b4a.example.main _main = null;
 public static b4a.example.principal _principal = null;
 public static b4a.example.principal2 _principal2 = null;
+public static b4a.example.principal3 _principal3 = null;
   public Object[] GetGlobals() {
-		return new Object[] {"DateUtils",starter.mostCurrent._dateutils,"Main",Debug.moduleToString(b4a.example.main.class),"Principal",Debug.moduleToString(b4a.example.principal.class),"Principal2",Debug.moduleToString(b4a.example.principal2.class),"Service",starter.mostCurrent._service};
+		return new Object[] {"DateUtils",starter.mostCurrent._dateutils,"Main",Debug.moduleToString(b4a.example.main.class),"Principal",Debug.moduleToString(b4a.example.principal.class),"Principal2",Debug.moduleToString(b4a.example.principal2.class),"Principal3",Debug.moduleToString(b4a.example.principal3.class),"Service",starter.mostCurrent._service};
 }
 }

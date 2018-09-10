@@ -1,1 +1,1 @@
-Nombre-Fecha-Hora-Evento-NombreDeDocumento.Docx-Conferencista-Grupo1;Grupo2;Grupo3:
+Nombre-Fecha-Hora-Evento-NombreDeDocumento.Docx-Conferencista-Grupo1;Grupo2;Grupo3-

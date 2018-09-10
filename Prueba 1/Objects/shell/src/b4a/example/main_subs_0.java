@@ -124,10 +124,12 @@ public static void initializeProcessGlobals() {
 starter_subs_0._process_globals();
 principal_subs_0._process_globals();
 principal2_subs_0._process_globals();
+principal3_subs_0._process_globals();
 main.myClass = BA.getDeviceClass ("b4a.example.main");
 starter.myClass = BA.getDeviceClass ("b4a.example.starter");
 principal.myClass = BA.getDeviceClass ("b4a.example.principal");
 principal2.myClass = BA.getDeviceClass ("b4a.example.principal2");
+principal3.myClass = BA.getDeviceClass ("b4a.example.principal3");
 		
         } catch (Exception e) {
 			throw new RuntimeException(e);
@@ -150,9 +152,9 @@ try {
 if (RapidSub.canDelegate("tiempo_tick")) { return b4a.example.main.remoteMe.runUserSub(false, "main","tiempo_tick");}
  BA.debugLineNum = 51;BA.debugLine="Sub tiempo_Tick";
 Debug.ShouldStop(262144);
- BA.debugLineNum = 52;BA.debugLine="StartActivity(Principal2)";
+ BA.debugLineNum = 52;BA.debugLine="StartActivity(Principal3)";
 Debug.ShouldStop(524288);
-main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._principal2.getObject())));
+main.mostCurrent.__c.runVoidMethod ("StartActivity",main.processBA,(Object)((main.mostCurrent._principal3.getObject())));
  BA.debugLineNum = 53;BA.debugLine="End Sub";
 Debug.ShouldStop(1048576);
 return RemoteObject.createImmutable("");

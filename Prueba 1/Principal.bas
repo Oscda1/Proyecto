@@ -87,7 +87,7 @@ Sub Activity_Create(FirstTime As Boolean)
 				Select Temporal
 					Case "|"
 						Contador3=Contador3+1
-						Exit
+						
 					Case "<"
 						NumeroDeInicio=Contador1+1
 							Do While (DosPuntos=False)
@@ -96,10 +96,10 @@ Sub Activity_Create(FirstTime As Boolean)
 								Select (PuntoYComa)
 									Case ":"
 										DosPuntos=True
-										Exit
+										
 									Case ";"
 										CantidadGrupos=CantidadGrupos+1
-										Exit
+										
 								End Select
 								Dim Grupos(CantidadGrupos) As String
 							PuntoYComa=False
@@ -111,10 +111,10 @@ Sub Activity_Create(FirstTime As Boolean)
 								Case ":"
 									DosPuntos=True
 									CargarEvento=True
-									Exit
+									
 								Case ";"
 									Contador2=Contador2+1
-									Exit
+									
 								Case Else
 									Grupos(Contador2)=Grupos(Contador2)+PuntoYComa
 							End Select
@@ -124,22 +124,22 @@ Sub Activity_Create(FirstTime As Boolean)
 							Select Seccion
 								Case 0
 									NombreEvento=NombreEvento&Temporal
-									Exit
+									
 								Case 1
 							FechaEvento=FechaEvento&Temporal
-									Exit
+									
 								Case 2
 							HoraEvento=HoraEvento&Temporal
-								Exit
+								
 								Case 3
 							TipoEvento=TipoEvento&Temporal
-								Exit
+								
 								Case 4
 							NombreDelDocumento=NombreDelDocumento&Temporal
-								Exit
+								
 								Case 5
 							Conferencista=Conferencista&Temporal
-								Exit
+								
 							End Select
 					End Select
 				Loop

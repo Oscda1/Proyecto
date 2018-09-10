@@ -62,7 +62,8 @@ public static RemoteObject _dateutils = RemoteObject.declareNull("b4a.example.da
 public static b4a.example.starter _starter = null;
 public static b4a.example.principal _principal = null;
 public static b4a.example.principal2 _principal2 = null;
+public static b4a.example.principal3 _principal3 = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",main.mostCurrent._activity,"Conexion",main._conexion,"ConexionAInternet",main._conexionainternet,"DateUtils",main.mostCurrent._dateutils,"Principal",Debug.moduleToString(b4a.example.principal.class),"Principal2",Debug.moduleToString(b4a.example.principal2.class),"Starter",Debug.moduleToString(b4a.example.starter.class),"tiempo",main._tiempo};
+		return new Object[] {"Activity",main.mostCurrent._activity,"Conexion",main._conexion,"ConexionAInternet",main._conexionainternet,"DateUtils",main.mostCurrent._dateutils,"Principal",Debug.moduleToString(b4a.example.principal.class),"Principal2",Debug.moduleToString(b4a.example.principal2.class),"Principal3",Debug.moduleToString(b4a.example.principal3.class),"Starter",Debug.moduleToString(b4a.example.starter.class),"tiempo",main._tiempo};
 }
 }

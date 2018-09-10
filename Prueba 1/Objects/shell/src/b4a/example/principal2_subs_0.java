@@ -65,27 +65,27 @@ principal2._primeravezengrupos = principal2.mostCurrent.__c.getField(true,"True"
  BA.debugLineNum = 55;BA.debugLine="Contenido=File.ReadString(File.DirAssets,\"eventos";
 Debug.ShouldStop(4194304);
 principal2._contenido = principal2.mostCurrent.__c.getField(false,"File").runMethod(true,"ReadString",(Object)(principal2.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("eventos.txt")));
- BA.debugLineNum = 56;BA.debugLine="If (Contenido<>\"\") Then";
+ BA.debugLineNum = 56;BA.debugLine="If Contenido<>\"\" Then";
 Debug.ShouldStop(8388608);
-if ((RemoteObject.solveBoolean("!",principal2._contenido,RemoteObject.createImmutable("")))) { 
+if (RemoteObject.solveBoolean("!",principal2._contenido,BA.ObjectToString(""))) { 
  BA.debugLineNum = 57;BA.debugLine="EventosPanel.Visible=True";
 Debug.ShouldStop(16777216);
 principal2.mostCurrent._eventospanel.runMethod(true,"setVisible",principal2.mostCurrent.__c.getField(true,"True"));
  BA.debugLineNum = 58;BA.debugLine="Eventos.Visible=False";
 Debug.ShouldStop(33554432);
 principal2.mostCurrent._eventos.runMethod(true,"setVisible",principal2.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 59;BA.debugLine="Do While (DosPuntos=False)";
+ BA.debugLineNum = 59;BA.debugLine="Do While DosPuntos=False";
 Debug.ShouldStop(67108864);
-while ((RemoteObject.solveBoolean("=",principal2._dospuntos,principal2.mostCurrent.__c.getField(true,"False")))) {
+while (RemoteObject.solveBoolean("=",principal2._dospuntos,principal2.mostCurrent.__c.getField(true,"False"))) {
  BA.debugLineNum = 60;BA.debugLine="ContadorCaracter=ContadorCaracter+1";
 Debug.ShouldStop(134217728);
 principal2._contadorcaracter = RemoteObject.solve(new RemoteObject[] {principal2._contadorcaracter,RemoteObject.createImmutable(1)}, "+",1, 1);
  BA.debugLineNum = 61;BA.debugLine="LetraTemporal=Contenido.SubString(ContadorCaract";
 Debug.ShouldStop(268435456);
 principal2._letratemporal = principal2._contenido.runMethod(true,"substring",(Object)(principal2._contadorcaracter));
- BA.debugLineNum = 62;BA.debugLine="Select (LetraTemporal)";
+ BA.debugLineNum = 62;BA.debugLine="Select LetraTemporal";
 Debug.ShouldStop(536870912);
-switch (BA.switchObjectToInt((principal2._letratemporal),BA.ObjectToString("-"),BA.ObjectToString(":"))) {
+switch (BA.switchObjectToInt(principal2._letratemporal,BA.ObjectToString("-"),BA.ObjectToString(":"))) {
 case 0: {
  BA.debugLineNum = 64;BA.debugLine="Seccion=Seccion+1";
 Debug.ShouldStop(-2147483648);
@@ -93,96 +93,72 @@ principal2._seccion = RemoteObject.solve(new RemoteObject[] {principal2._seccion
  BA.debugLineNum = 65;BA.debugLine="Log(Seccion)";
 Debug.ShouldStop(1);
 principal2.mostCurrent.__c.runVoidMethod ("Log",(Object)(BA.NumberToString(principal2._seccion)));
- BA.debugLineNum = 66;BA.debugLine="Exit";
-Debug.ShouldStop(2);
-if (true) break;
  break; }
 case 1: {
  BA.debugLineNum = 68;BA.debugLine="DosPuntos=True";
 Debug.ShouldStop(8);
 principal2._dospuntos = principal2.mostCurrent.__c.getField(true,"True");
- BA.debugLineNum = 69;BA.debugLine="Exit";
-Debug.ShouldStop(16);
-if (true) break;
  break; }
 default: {
- BA.debugLineNum = 71;BA.debugLine="Select (Seccion)";
+ BA.debugLineNum = 71;BA.debugLine="Select Seccion";
 Debug.ShouldStop(64);
-switch (BA.switchObjectToInt((principal2._seccion),BA.numberCast(int.class, 0),BA.numberCast(int.class, 1),BA.numberCast(int.class, 2),BA.numberCast(int.class, 3),BA.numberCast(int.class, 4),BA.numberCast(int.class, 5),BA.numberCast(int.class, 6))) {
+switch (BA.switchObjectToInt(principal2._seccion,BA.numberCast(int.class, 0),BA.numberCast(int.class, 1),BA.numberCast(int.class, 2),BA.numberCast(int.class, 3),BA.numberCast(int.class, 4),BA.numberCast(int.class, 5),BA.numberCast(int.class, 6))) {
 case 0: {
  BA.debugLineNum = 73;BA.debugLine="NombreEvento=NombreEvento&LetraTemporal";
 Debug.ShouldStop(256);
 principal2._nombreevento = RemoteObject.concat(principal2._nombreevento,principal2._letratemporal);
- BA.debugLineNum = 74;BA.debugLine="Exit";
-Debug.ShouldStop(512);
-if (true) break;
  break; }
 case 1: {
  BA.debugLineNum = 76;BA.debugLine="FechaEvento=FechaEvento&LetraTemporal";
 Debug.ShouldStop(2048);
 principal2._fechaevento = RemoteObject.concat(principal2._fechaevento,principal2._letratemporal);
- BA.debugLineNum = 77;BA.debugLine="Exit";
-Debug.ShouldStop(4096);
-if (true) break;
  break; }
 case 2: {
  BA.debugLineNum = 79;BA.debugLine="HoraEvento=HoraEvento&LetraTemporal";
 Debug.ShouldStop(16384);
 principal2._horaevento = RemoteObject.concat(principal2._horaevento,principal2._letratemporal);
- BA.debugLineNum = 80;BA.debugLine="Exit";
-Debug.ShouldStop(32768);
-if (true) break;
  break; }
 case 3: {
  BA.debugLineNum = 82;BA.debugLine="TipoEvento=TipoEvento&LetraTemporal";
 Debug.ShouldStop(131072);
 principal2._tipoevento = RemoteObject.concat(principal2._tipoevento,principal2._letratemporal);
- BA.debugLineNum = 83;BA.debugLine="Exit";
-Debug.ShouldStop(262144);
-if (true) break;
  break; }
 case 4: {
  BA.debugLineNum = 85;BA.debugLine="NombreDocumento=NombreDocumento&LetraTempora";
 Debug.ShouldStop(1048576);
 principal2._nombredocumento = RemoteObject.concat(principal2._nombredocumento,principal2._letratemporal);
- BA.debugLineNum = 86;BA.debugLine="Exit";
-Debug.ShouldStop(2097152);
-if (true) break;
  break; }
 case 5: {
  BA.debugLineNum = 88;BA.debugLine="Conferencista=Conferencista&LetraTemporal";
 Debug.ShouldStop(8388608);
 principal2._conferencista = RemoteObject.concat(principal2._conferencista,principal2._letratemporal);
- BA.debugLineNum = 89;BA.debugLine="Exit";
-Debug.ShouldStop(16777216);
-if (true) break;
  break; }
 case 6: {
- BA.debugLineNum = 91;BA.debugLine="If (PrimeraVezEnGrupos) Then";
+ BA.debugLineNum = 91;BA.debugLine="If PrimeraVezEnGrupos Then";
 Debug.ShouldStop(67108864);
-if ((principal2._primeravezengrupos).<Boolean>get().booleanValue()) { 
+if (principal2._primeravezengrupos.<Boolean>get().booleanValue()) { 
  BA.debugLineNum = 92;BA.debugLine="InicioGrupos=ContadorCaracter";
 Debug.ShouldStop(134217728);
 principal2._iniciogrupos = principal2._contadorcaracter;
- BA.debugLineNum = 93;BA.debugLine="Do While(PrimeraVezEnGrupos=True)";
+ BA.debugLineNum = 93;BA.debugLine="Do While PrimeraVezEnGrupos=True";
 Debug.ShouldStop(268435456);
-while ((RemoteObject.solveBoolean("=",principal2._primeravezengrupos,principal2.mostCurrent.__c.getField(true,"True")))) {
+while (RemoteObject.solveBoolean("=",principal2._primeravezengrupos,principal2.mostCurrent.__c.getField(true,"True"))) {
  BA.debugLineNum = 94;BA.debugLine="InicioGrupos=InicioGrupos+1";
 Debug.ShouldStop(536870912);
 principal2._iniciogrupos = RemoteObject.solve(new RemoteObject[] {principal2._iniciogrupos,RemoteObject.createImmutable(1)}, "+",1, 1);
  BA.debugLineNum = 95;BA.debugLine="LetraTemporal=Contenido.SubString(InicioGr";
 Debug.ShouldStop(1073741824);
 principal2._letratemporal = principal2._contenido.runMethod(true,"substring",(Object)(principal2._iniciogrupos));
- BA.debugLineNum = 96;BA.debugLine="If (LetraTemporal=\";\") Then";
+ BA.debugLineNum = 96;BA.debugLine="If LetraTemporal=\";\" Then";
 Debug.ShouldStop(-2147483648);
-if ((RemoteObject.solveBoolean("=",principal2._letratemporal,RemoteObject.createImmutable(";")))) { 
+if (RemoteObject.solveBoolean("=",principal2._letratemporal,BA.ObjectToString(";"))) { 
  BA.debugLineNum = 97;BA.debugLine="CantidadGrupos=CantidadGrupos+1";
 Debug.ShouldStop(1);
 principal2._cantidadgrupos = RemoteObject.solve(new RemoteObject[] {principal2._cantidadgrupos,RemoteObject.createImmutable(1)}, "+",1, 1);
  }else 
-{ BA.debugLineNum = 98;BA.debugLine="Else If (LetraTemporal=\":\") Then";
+{ BA.debugLineNum = 98;BA.debugLine="Else If LetraTemporal=\":\" Then";
 Debug.ShouldStop(2);
-if ((RemoteObject.solveBoolean("=",principal2._letratemporal,RemoteObject.createImmutable(":")))) { 
+if (RemoteObject.solveBoolean("=",principal2._letratemporal,BA.ObjectToString(":"))) { 
  BA.debugLineNum = 99;BA.debugLine="PrimeraVezEnGrupos=False";
 Debug.ShouldStop(4);
 principal2._primeravezengrupos = principal2.mostCurrent.__c.getField(true,"False");
@@ -194,9 +170,9 @@ principal2._primeravezengrupos = principal2.mostCurrent.__c.getField(true,"False
 Debug.ShouldStop(32);
 _grupos = RemoteObject.createNewArray ("String", new int[] {principal2._cantidadgrupos.<Integer>get().intValue()}, new Object[]{});Debug.locals.put("Grupos", _grupos);
  }else {
- BA.debugLineNum = 104;BA.debugLine="If (LetraTemporal<>\";\") Then";
+ BA.debugLineNum = 104;BA.debugLine="If LetraTemporal<>\";\" Then";
 Debug.ShouldStop(128);
-if ((RemoteObject.solveBoolean("!",principal2._letratemporal,RemoteObject.createImmutable(";")))) { 
+if (RemoteObject.solveBoolean("!",principal2._letratemporal,BA.ObjectToString(";"))) { 
  BA.debugLineNum = 105;BA.debugLine="Grupos(SeccionGrupo)=LetraTemporal";
 Debug.ShouldStop(256);
 _grupos.setArrayElement (principal2._letratemporal,principal2._secciongrupo);
@@ -206,15 +182,9 @@ Debug.ShouldStop(1024);
 principal2._secciongrupo = RemoteObject.solve(new RemoteObject[] {principal2._secciongrupo,RemoteObject.createImmutable(1)}, "+",1, 1);
  };
  };
- BA.debugLineNum = 110;BA.debugLine="Exit";
-Debug.ShouldStop(8192);
-if (true) break;
  break; }
 }
 ;
- BA.debugLineNum = 112;BA.debugLine="Exit";
-Debug.ShouldStop(32768);
-if (true) break;
  break; }
 }
 ;
@@ -223,9 +193,9 @@ if (true) break;
  BA.debugLineNum = 115;BA.debugLine="DetallesEventos.Text=NombreEvento&CRLF&FechaEven";
 Debug.ShouldStop(262144);
 principal2.mostCurrent._detalleseventos.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(principal2._nombreevento,principal2.mostCurrent.__c.getField(true,"CRLF"),principal2._fechaevento,principal2.mostCurrent.__c.getField(true,"CRLF"),principal2._horaevento,principal2.mostCurrent.__c.getField(true,"CRLF"),principal2._tipoevento,principal2.mostCurrent.__c.getField(true,"CRLF"),principal2._nombredocumento,principal2.mostCurrent.__c.getField(true,"CRLF"),principal2._conferencista,principal2.mostCurrent.__c.getField(true,"CRLF"))));
- BA.debugLineNum = 116;BA.debugLine="Do While(DespliegaGrupos<>CantidadGrupos)";
+ BA.debugLineNum = 116;BA.debugLine="Do While DespliegaGrupos<>CantidadGrupos";
 Debug.ShouldStop(524288);
-while ((RemoteObject.solveBoolean("!",principal2._despliegagrupos,BA.numberCast(double.class, principal2._cantidadgrupos)))) {
+while (RemoteObject.solveBoolean("!",principal2._despliegagrupos,BA.numberCast(double.class, principal2._cantidadgrupos))) {
  BA.debugLineNum = 117;BA.debugLine="DetallesEventos.Text=Eventos.Text&Grupos(Desplie";
 Debug.ShouldStop(1048576);
 principal2.mostCurrent._detalleseventos.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(principal2.mostCurrent._eventos.runMethod(true,"getText"),_grupos.getArrayElement(true,principal2._despliegagrupos))));

@@ -77,7 +77,7 @@ principal,process_globals,0,1,6,31
 
 
 
-principal2,activity_create,1,1,37,124
+principal2,activity_create,1,0,37,124
 ,detalleseventos,,eventos,,eventospanel,,plusevento,,despliegagrupos,,secciongrupo,,cantidadgrupos,,seccion,,letratemporal,,contadorcaracter,,dospuntos,,nombreevento,,fechaevento,,horaevento,,nombredocumento,,conferencista,,tipoevento,,iniciogrupos,,primeravezengrupos,,contenido
 ,detalleseventos,,eventos,,eventospanel,,plusevento,,despliegagrupos,,secciongrupo,,cantidadgrupos,,seccion,,letratemporal,,contadorcaracter,,dospuntos,,nombreevento,,fechaevento,,horaevento,,nombredocumento,,conferencista,,tipoevento,,iniciogrupos,,primeravezengrupos,,contenido
 
@@ -94,6 +94,26 @@ principal2,globals,0,1,27,35
 
 
 principal2,process_globals,0,1,6,25
+
+
+
+principal3,activity_create,1,0,32,79
+,detalleseventos,,eventos,,eventospanel,,plusevento,,contenido,,cantidades,,sale,,contador,,nombreevento,,fechaevento,,horaevento,,tipoevento,,nombredocumento,,conferencista,,grupos
+,detalleseventos,,eventos,,eventospanel,,plusevento,,contenido,,cantidades,,sale,,contador,,nombreevento,,fechaevento,,horaevento,,tipoevento,,nombredocumento,,conferencista,,grupos
+
+principal3,activity_pause,0,0,85,87
+
+
+
+principal3,activity_resume,0,0,81,83
+
+
+
+principal3,globals,0,1,22,30
+
+
+
+principal3,process_globals,0,1,6,20
 
 
 

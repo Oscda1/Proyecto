@@ -130,6 +130,7 @@ public b4a.example.dateutils _dateutils = null;
 public b4a.example.main _main = null;
 public b4a.example.principal _principal = null;
 public b4a.example.principal2 _principal2 = null;
+public b4a.example.principal3 _principal3 = null;
 public static boolean  _application_error(anywheresoftware.b4a.objects.B4AException _error,String _stacktrace) throws Exception{
 RDebugUtils.currentModule="starter";
 if (Debug.shouldDelegate(processBA, "application_error"))

@@ -50,5 +50,12 @@
 			android:label="Proyecto Servicio Social"
 			android:screenOrientation="unspecified">
 		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".principal3"
+			android:label="Proyecto Servicio Social"
+			android:screenOrientation="unspecified">
+		</activity>
 	</application>
 </manifest>

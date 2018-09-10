@@ -16,9 +16,10 @@ ManifestCode='This code will be applied to the manifest file during compilation.
 Module1=Starter
 Module2=Principal
 Module3=Principal2
+Module4=Principal3
 NumberOfFiles=3
 NumberOfLibraries=5
-NumberOfModules=3
+NumberOfModules=4
 Version=8.3
 @EndOfDesignText@
 	#Region  Project Attributes 
@@ -72,7 +73,7 @@ Sub CheckForWiFi
 End Sub
 
 Sub tiempo_Tick
-	StartActivity(Principal2)
+	StartActivity(Principal3)
 End Sub
 
 Sub Activity_Resume

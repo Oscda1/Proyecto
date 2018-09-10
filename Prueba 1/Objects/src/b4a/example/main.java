@@ -347,6 +347,7 @@ public static boolean isAnyActivityVisible() {
 vis = vis | (main.mostCurrent != null);
 vis = vis | (principal.mostCurrent != null);
 vis = vis | (principal2.mostCurrent != null);
+vis = vis | (principal3.mostCurrent != null);
 return vis;}
 
 private static BA killProgramHelper(BA ba) {
@@ -395,6 +396,18 @@ BA.applicationContext.stopService(new android.content.Intent(BA.applicationConte
             if (__a != null)
 				__a.finish();}
 
+ {
+            Activity __a = null;
+            if (principal3.previousOne != null) {
+				__a = principal3.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(principal3.mostCurrent == null ? null : principal3.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
 public static boolean _conexionainternet = false;
@@ -404,6 +417,7 @@ public b4a.example.dateutils _dateutils = null;
 public b4a.example.starter _starter = null;
 public b4a.example.principal _principal = null;
 public b4a.example.principal2 _principal2 = null;
+public b4a.example.principal3 _principal3 = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
@@ -486,8 +500,8 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "tiempo_tick"))
 RDebugUtils.currentLine=786432;
  //BA.debugLineNum = 786432;BA.debugLine="Sub tiempo_Tick";
 RDebugUtils.currentLine=786433;
- //BA.debugLineNum = 786433;BA.debugLine="StartActivity(Principal2)";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._principal2.getObject()));
+ //BA.debugLineNum = 786433;BA.debugLine="StartActivity(Principal3)";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._principal3.getObject()));
 RDebugUtils.currentLine=786434;
  //BA.debugLineNum = 786434;BA.debugLine="End Sub";
 return "";
