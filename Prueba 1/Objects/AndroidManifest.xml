@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	package="b4a.example"
+	package="com.ServicioSocial"
 	android:versionCode="1"
 	android:versionName=""
 	android:installLocation="internalOnly">
@@ -46,14 +46,7 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".principal2"
-			android:label="Proyecto Servicio Social"
-			android:screenOrientation="unspecified">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".principal3"
+			android:name=".crearevento"
 			android:label="Proyecto Servicio Social"
 			android:screenOrientation="unspecified">
 		</activity>
