@@ -14,17 +14,15 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-	<uses-permission android:name="android.permission.INTERNET"/>
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<application
 		android:icon="@drawable/icon"
-		android:label="Proyecto Servicio Social"
+		android:label="CeivitGud"
 		android:theme="@style/DarkTheme">
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".main"
-			android:label="Proyecto Servicio Social"
+			android:label="CeivitGud"
 			android:screenOrientation="unspecified">
 			<intent-filter>
 			   <action android:name="android.intent.action.MAIN" />
@@ -40,14 +38,14 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".principal"
-			android:label="Proyecto Servicio Social"
+			android:label="CeivitGud"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".crearevento"
-			android:label="Proyecto Servicio Social"
+			android:label="CeivitGud"
 			android:screenOrientation="unspecified">
 		</activity>
 	</application>

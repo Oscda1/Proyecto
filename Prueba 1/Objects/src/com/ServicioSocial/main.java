@@ -33,7 +33,7 @@ public class main extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "com.ServicioSocial", "com.ServicioSocial.main");
+			processBA = new BA(this.getApplicationContext(), null, null, "com.ServicioSocial", "com.ServicioSocial.main");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -328,168 +328,102 @@ public class main extends Activity implements B4AActivity{
             
     }
 
+public anywheresoftware.b4a.keywords.Common __c = null;
+public static boolean _conexionainternet = false;
+public static anywheresoftware.b4a.objects.Timer _tiempo = null;
+public static wifi.MLwifi _conexion = null;
+public com.ServicioSocial.starter _starter = null;
+public com.ServicioSocial.principal _principal = null;
+public com.ServicioSocial.crearevento _crearevento = null;
 
-
-public static void initializeProcessGlobals() {
-    
-    if (main.processGlobalsRun == false) {
-	    main.processGlobalsRun = true;
-		try {
-		        b4a.example.dateutils._process_globals();
-		
-        } catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-    }
-}
 public static boolean isAnyActivityVisible() {
     boolean vis = false;
 vis = vis | (main.mostCurrent != null);
 vis = vis | (principal.mostCurrent != null);
 vis = vis | (crearevento.mostCurrent != null);
 return vis;}
-
-private static BA killProgramHelper(BA ba) {
-    if (ba == null)
-        return null;
-    anywheresoftware.b4a.BA.SharedProcessBA sharedProcessBA = ba.sharedProcessBA;
-    if (sharedProcessBA == null || sharedProcessBA.activityBA == null)
-        return null;
-    return sharedProcessBA.activityBA.get();
-}
-public static void killProgram() {
-     {
-            Activity __a = null;
-            if (main.previousOne != null) {
-				__a = main.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(main.mostCurrent == null ? null : main.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
-BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
- {
-            Activity __a = null;
-            if (principal.previousOne != null) {
-				__a = principal.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(principal.mostCurrent == null ? null : principal.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (crearevento.previousOne != null) {
-				__a = crearevento.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(crearevento.mostCurrent == null ? null : crearevento.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
-}
-public anywheresoftware.b4a.keywords.Common __c = null;
-public static boolean _conexionainternet = false;
-public static anywheresoftware.b4a.objects.Timer _tiempo = null;
-public static wifi.MLwifi _conexion = null;
-public b4a.example.dateutils _dateutils = null;
-public com.ServicioSocial.starter _starter = null;
-public com.ServicioSocial.principal _principal = null;
-public com.ServicioSocial.crearevento _crearevento = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=131072;
- //BA.debugLineNum = 131072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=131073;
- //BA.debugLineNum = 131073;BA.debugLine="Activity.LoadLayout(\"SplashScreen\")";
+ //BA.debugLineNum = 29;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 30;BA.debugLine="Activity.LoadLayout(\"SplashScreen\")";
 mostCurrent._activity.LoadLayout("SplashScreen",mostCurrent.activityBA);
-RDebugUtils.currentLine=131074;
- //BA.debugLineNum = 131074;BA.debugLine="CheckForWiFi";
+ //BA.debugLineNum = 31;BA.debugLine="CheckForWiFi";
 _checkforwifi();
-RDebugUtils.currentLine=131075;
- //BA.debugLineNum = 131075;BA.debugLine="If (ConexionAInternet= False) Then";
+ //BA.debugLineNum = 32;BA.debugLine="If (ConexionAInternet= False) Then";
 if ((_conexionainternet==anywheresoftware.b4a.keywords.Common.False)) { 
-RDebugUtils.currentLine=131076;
- //BA.debugLineNum = 131076;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 33;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  }else {
-RDebugUtils.currentLine=131078;
- //BA.debugLineNum = 131078;BA.debugLine="tiempo.Initialize(\"tiempo\",5000)";
+ //BA.debugLineNum = 35;BA.debugLine="tiempo.Initialize(\"tiempo\",5000)";
 _tiempo.Initialize(processBA,"tiempo",(long) (5000));
-RDebugUtils.currentLine=131079;
- //BA.debugLineNum = 131079;BA.debugLine="tiempo.Enabled=True";
+ //BA.debugLineNum = 36;BA.debugLine="tiempo.Enabled=True";
 _tiempo.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  };
-RDebugUtils.currentLine=131082;
- //BA.debugLineNum = 131082;BA.debugLine="End Sub";
-return "";
-}
-public static String  _checkforwifi() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "checkforwifi"))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "checkforwifi", null));}
-RDebugUtils.currentLine=720896;
- //BA.debugLineNum = 720896;BA.debugLine="Sub CheckForWiFi";
-RDebugUtils.currentLine=720897;
- //BA.debugLineNum = 720897;BA.debugLine="If Conexion.isOnLine=False Then";
-if (_conexion.isOnLine(processBA)==anywheresoftware.b4a.keywords.Common.False) { 
-RDebugUtils.currentLine=720898;
- //BA.debugLineNum = 720898;BA.debugLine="ToastMessageShow(\"No tiene conexion a internet\",";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("No tiene conexion a internet"),anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=720899;
- //BA.debugLineNum = 720899;BA.debugLine="ConexionAInternet=False";
-_conexionainternet = anywheresoftware.b4a.keywords.Common.False;
- }else {
-RDebugUtils.currentLine=720901;
- //BA.debugLineNum = 720901;BA.debugLine="ToastMessageShow(\"Tiene conexion a internet\",Tru";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Tiene conexion a internet"),anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=720902;
- //BA.debugLineNum = 720902;BA.debugLine="ConexionAInternet=True";
-_conexionainternet = anywheresoftware.b4a.keywords.Common.True;
- };
-RDebugUtils.currentLine=720904;
- //BA.debugLineNum = 720904;BA.debugLine="End Sub";
+ //BA.debugLineNum = 39;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="main";
-RDebugUtils.currentLine=262144;
- //BA.debugLineNum = 262144;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=262146;
- //BA.debugLineNum = 262146;BA.debugLine="End Sub";
+ //BA.debugLineNum = 59;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 61;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=196608;
- //BA.debugLineNum = 196608;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=196610;
- //BA.debugLineNum = 196610;BA.debugLine="End Sub";
+ //BA.debugLineNum = 55;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 57;BA.debugLine="End Sub";
+return "";
+}
+public static String  _checkforwifi() throws Exception{
+ //BA.debugLineNum = 41;BA.debugLine="Sub CheckForWiFi";
+ //BA.debugLineNum = 42;BA.debugLine="If Conexion.isOnLine=False Then";
+if (_conexion.isOnLine(processBA)==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 43;BA.debugLine="ToastMessageShow(\"No tiene conexion a internet\",";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("No tiene conexion a internet"),anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 44;BA.debugLine="ConexionAInternet=False";
+_conexionainternet = anywheresoftware.b4a.keywords.Common.False;
+ }else {
+ //BA.debugLineNum = 46;BA.debugLine="ToastMessageShow(\"Tiene conexion a internet\",Tru";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Tiene conexion a internet"),anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 47;BA.debugLine="ConexionAInternet=True";
+_conexionainternet = anywheresoftware.b4a.keywords.Common.True;
+ };
+ //BA.debugLineNum = 49;BA.debugLine="End Sub";
+return "";
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 23;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 27;BA.debugLine="End Sub";
+return "";
+}
+
+public static void initializeProcessGlobals() {
+    
+    if (main.processGlobalsRun == false) {
+	    main.processGlobalsRun = true;
+		try {
+		        main._process_globals();
+starter._process_globals();
+principal._process_globals();
+crearevento._process_globals();
+		
+        } catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+    }
+}public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 15;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 18;BA.debugLine="Dim ConexionAInternet As Boolean";
+_conexionainternet = false;
+ //BA.debugLineNum = 19;BA.debugLine="Dim tiempo As Timer";
+_tiempo = new anywheresoftware.b4a.objects.Timer();
+ //BA.debugLineNum = 20;BA.debugLine="Dim Conexion As MLwifi";
+_conexion = new wifi.MLwifi();
+ //BA.debugLineNum = 21;BA.debugLine="End Sub";
 return "";
 }
 public static String  _tiempo_tick() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "tiempo_tick"))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "tiempo_tick", null));}
-RDebugUtils.currentLine=786432;
- //BA.debugLineNum = 786432;BA.debugLine="Sub tiempo_Tick";
-RDebugUtils.currentLine=786433;
- //BA.debugLineNum = 786433;BA.debugLine="StartActivity(Principal)";
+ //BA.debugLineNum = 51;BA.debugLine="Sub tiempo_Tick";
+ //BA.debugLineNum = 52;BA.debugLine="StartActivity(Principal)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._principal.getObject()));
-RDebugUtils.currentLine=786434;
- //BA.debugLineNum = 786434;BA.debugLine="End Sub";
+ //BA.debugLineNum = 53;BA.debugLine="End Sub";
 return "";
 }
 }

@@ -5,7 +5,7 @@ Type=Activity
 Version=8.3
 @EndOfDesignText@
 #Region  Activity Attributes 
-	#FullScreen: True
+	#FullScreen: False
 	#IncludeTitle: False
 #End Region
 
@@ -23,6 +23,7 @@ Sub Process_Globals
 	Dim Conferencista As String
 	Dim TipoEvento As String
 	Dim Grupos() As String
+	Dim btm As Bitmap
 End Sub
 
 Sub Globals
@@ -43,6 +44,8 @@ Sub Activity_Create(FirstTime As Boolean)
 		Eventos.Visible=True
 		EventosPanel.Visible=False
 	Else
+		btm.Initialize(File.DirAssets,"Barra_Datos_Evento.png")
+		DetallesEventos.SetBackgroundImage(btm)
 		Eventos.Visible=False
 		EventosPanel.Visible=True
 		cantidades=Regex.Split("-", contenido)

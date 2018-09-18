@@ -25,7 +25,7 @@ public class crearevento extends Activity implements B4AActivity{
     ActivityWrapper _activity;
     java.util.ArrayList<B4AMenuItem> menuItems;
 	public static final boolean fullScreen = false;
-	public static final boolean includeTitle = true;
+	public static final boolean includeTitle = false;
     public static WeakReference<Activity> previousOne;
 
 	@Override
@@ -33,7 +33,7 @@ public class crearevento extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "com.ServicioSocial", "com.ServicioSocial.crearevento");
+			processBA = new BA(this.getApplicationContext(), null, null, "com.ServicioSocial", "com.ServicioSocial.crearevento");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -328,7 +328,18 @@ public class crearevento extends Activity implements B4AActivity{
             
     }
 
-
+public anywheresoftware.b4a.keywords.Common __c = null;
+public static anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _bmp = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _barratitulo = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _imagenregresar = null;
+public anywheresoftware.b4a.objects.FloatLabeledEditTextWrapper _nombreeventoedittext = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _button1 = null;
+public anywheresoftware.b4a.objects.LabelWrapper _labeldate = null;
+public anywheresoftware.b4a.objects.LabelWrapper _labeltime = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _btntime = null;
+public com.ServicioSocial.main _main = null;
+public com.ServicioSocial.starter _starter = null;
+public com.ServicioSocial.principal _principal = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -337,52 +348,100 @@ public static void initializeProcessGlobals() {
                 throw new RuntimeException(e);
             }
 }
-public anywheresoftware.b4a.keywords.Common __c = null;
-public anywheresoftware.b4a.objects.ImageViewWrapper _barratitulo = null;
-public anywheresoftware.b4a.objects.ImageViewWrapper _imagenregresar = null;
-public anywheresoftware.b4a.objects.FloatLabeledEditTextWrapper _nombreeventoedittext = null;
-public b4a.example.dateutils _dateutils = null;
-public com.ServicioSocial.main _main = null;
-public com.ServicioSocial.starter _starter = null;
-public com.ServicioSocial.principal _principal = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="crearevento";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=2162688;
- //BA.debugLineNum = 2162688;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=2162690;
- //BA.debugLineNum = 2162690;BA.debugLine="Activity.LoadLayout(\"NuevoEventoLayout\")";
+ //BA.debugLineNum = 24;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 26;BA.debugLine="Activity.LoadLayout(\"NuevoEventoLayout\")";
 mostCurrent._activity.LoadLayout("NuevoEventoLayout",mostCurrent.activityBA);
-RDebugUtils.currentLine=2162691;
- //BA.debugLineNum = 2162691;BA.debugLine="BarraTitulo.Bitmap=LoadBitmap(File.DirAssets,\"Bar";
+ //BA.debugLineNum = 27;BA.debugLine="BarraTitulo.Bitmap=LoadBitmap(File.DirAssets,\"Bar";
 mostCurrent._barratitulo.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Barra_Texto_titulo.png").getObject()));
-RDebugUtils.currentLine=2162692;
- //BA.debugLineNum = 2162692;BA.debugLine="ImagenRegresar.Bitmap=LoadBitmap(File.DirAssets,\"";
+ //BA.debugLineNum = 28;BA.debugLine="ImagenRegresar.Bitmap=LoadBitmap(File.DirAssets,\"";
 mostCurrent._imagenregresar.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Boton_retroceso.png").getObject()));
-RDebugUtils.currentLine=2162693;
- //BA.debugLineNum = 2162693;BA.debugLine="NombreEventoEditText.SetBackgroundImage(LoadBitma";
+ //BA.debugLineNum = 29;BA.debugLine="NombreEventoEditText.SetBackgroundImage(LoadBitma";
 mostCurrent._nombreeventoedittext.SetBackgroundImage((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Barra_TextoNombre y Conferencista.png").getObject()));
-RDebugUtils.currentLine=2162695;
- //BA.debugLineNum = 2162695;BA.debugLine="End Sub";
+ //BA.debugLineNum = 30;BA.debugLine="Bmp.Initialize(File.DirAssets,\"Boton_fecha y hora";
+_bmp.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Boton_fecha y hora.png");
+ //BA.debugLineNum = 31;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="crearevento";
-RDebugUtils.currentLine=2293760;
- //BA.debugLineNum = 2293760;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=2293762;
- //BA.debugLineNum = 2293762;BA.debugLine="End Sub";
+ //BA.debugLineNum = 49;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 51;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="crearevento";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=2228224;
- //BA.debugLineNum = 2228224;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=2228226;
- //BA.debugLineNum = 2228226;BA.debugLine="End Sub";
+ //BA.debugLineNum = 45;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 47;BA.debugLine="End Sub";
+return "";
+}
+public static String  _btntime_click() throws Exception{
+String _ret = "";
+anywheresoftware.b4a.agraham.dialogs.InputDialog.TimeDialog _td = null;
+String _txt = "";
+ //BA.debugLineNum = 33;BA.debugLine="Sub btnTime_Click";
+ //BA.debugLineNum = 34;BA.debugLine="Dim ret As String";
+_ret = "";
+ //BA.debugLineNum = 35;BA.debugLine="Dim td As TimeDialog";
+_td = new anywheresoftware.b4a.agraham.dialogs.InputDialog.TimeDialog();
+ //BA.debugLineNum = 36;BA.debugLine="Dim txt As String";
+_txt = "";
+ //BA.debugLineNum = 37;BA.debugLine="td.Hour = DateTime.GetHour(DateTime.Now)";
+_td.setHour(anywheresoftware.b4a.keywords.Common.DateTime.GetHour(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
+ //BA.debugLineNum = 38;BA.debugLine="td.Minute = DateTime.GetMinute(DateTime.Now)";
+_td.setMinute(anywheresoftware.b4a.keywords.Common.DateTime.GetMinute(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
+ //BA.debugLineNum = 39;BA.debugLine="td.Is24Hours = True";
+_td.setIs24Hours(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 40;BA.debugLine="ret = td.Show(\"Seleccione la hora:\", \"B4A Time Di";
+_ret = BA.NumberToString(_td.Show("Seleccione la hora:","B4A Time Dialog","Yes","Cancel","No",mostCurrent.activityBA,(android.graphics.Bitmap)(_bmp.getObject())));
+ //BA.debugLineNum = 41;BA.debugLine="ToastMessageShow(ret & \" : \" & td.Hour & \":\" & td";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_ret+" : "+BA.NumberToString(_td.getHour())+":"+BA.NumberToString(_td.getMinute())),anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 42;BA.debugLine="End Sub";
+return "";
+}
+public static String  _button1_click() throws Exception{
+String _ret = "";
+anywheresoftware.b4a.agraham.dialogs.InputDialog.DateDialog _dd = null;
+ //BA.debugLineNum = 54;BA.debugLine="Sub Button1_Click";
+ //BA.debugLineNum = 55;BA.debugLine="Dim ret As String";
+_ret = "";
+ //BA.debugLineNum = 56;BA.debugLine="Dim Dd As DateDialog";
+_dd = new anywheresoftware.b4a.agraham.dialogs.InputDialog.DateDialog();
+ //BA.debugLineNum = 57;BA.debugLine="Dd.Year = DateTime.GetYear(DateTime.Now)";
+_dd.setYear(anywheresoftware.b4a.keywords.Common.DateTime.GetYear(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
+ //BA.debugLineNum = 58;BA.debugLine="Dd.Month = DateTime.GetMonth(DateTime.Now)";
+_dd.setMonth(anywheresoftware.b4a.keywords.Common.DateTime.GetMonth(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
+ //BA.debugLineNum = 59;BA.debugLine="Dd.DayOfMonth = DateTime.GetDayOfMonth(DateTime.N";
+_dd.setDayOfMonth(anywheresoftware.b4a.keywords.Common.DateTime.GetDayOfMonth(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
+ //BA.debugLineNum = 60;BA.debugLine="ret = Dd.Show(\"\", \"Seleccione una Fecha\", \"Selecc";
+_ret = BA.NumberToString(_dd.Show("","Seleccione una Fecha","Seleccionar","Cancelar","",mostCurrent.activityBA,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)));
+ //BA.debugLineNum = 61;BA.debugLine="ToastMessageShow(ret & \" : \" & Dd.DayOfMonth & \"/";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_ret+" : "+BA.NumberToString(_dd.getDayOfMonth())+"/"+BA.NumberToString(_dd.getMonth())+"/"+BA.NumberToString(_dd.getYear())),anywheresoftware.b4a.keywords.Common.False);
+ //BA.debugLineNum = 62;BA.debugLine="End Sub";
+return "";
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 15;BA.debugLine="Private BarraTitulo As ImageView";
+mostCurrent._barratitulo = new anywheresoftware.b4a.objects.ImageViewWrapper();
+ //BA.debugLineNum = 16;BA.debugLine="Private ImagenRegresar As ImageView";
+mostCurrent._imagenregresar = new anywheresoftware.b4a.objects.ImageViewWrapper();
+ //BA.debugLineNum = 17;BA.debugLine="Private NombreEventoEditText As FloatLabeledEditT";
+mostCurrent._nombreeventoedittext = new anywheresoftware.b4a.objects.FloatLabeledEditTextWrapper();
+ //BA.debugLineNum = 18;BA.debugLine="Private Button1 As Button";
+mostCurrent._button1 = new anywheresoftware.b4a.objects.ButtonWrapper();
+ //BA.debugLineNum = 19;BA.debugLine="Private LabelDate As Label";
+mostCurrent._labeldate = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 20;BA.debugLine="Private LabelTime As Label";
+mostCurrent._labeltime = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 21;BA.debugLine="Private btnTime As Button";
+mostCurrent._btntime = new anywheresoftware.b4a.objects.ButtonWrapper();
+ //BA.debugLineNum = 22;BA.debugLine="End Sub";
+return "";
+}
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 9;BA.debugLine="Dim Bmp As Bitmap";
+_bmp = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
+ //BA.debugLineNum = 10;BA.debugLine="End Sub";
 return "";
 }
 }
