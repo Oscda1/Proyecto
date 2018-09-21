@@ -1,0 +1,99 @@
+﻿Build1=ServicioSocial,com.ServicioSocial
+File1=Barra_Datos_Evento.png
+File10=SplashScreen.bal
+File2=Barra_Texto_titulo.png
+File3=Barra_TextoNombre y Conferencista.png
+File4=Boton_Aceptar.png
+File5=Boton_Fecha y hora.png
+File6=Boton_Retroceso.png
+File7=Eventos.txt
+File8=NuevoEventoLayout.bal
+File9=PrincipalLayout.bal
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+IconFile=
+Library1=core
+Library2=abwifi
+Library3=mlwifi
+Library4=viewsex
+Library5=dialogs
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~'End of default text.~\n~
+Module1=Starter
+Module2=Principal
+Module3=CrearEvento
+NumberOfFiles=10
+NumberOfLibraries=5
+NumberOfModules=3
+Version=8.3
+@EndOfDesignText@
+	#Region  Project Attributes 
+	#ApplicationLabel: SaveItGood
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+	#BridgeLogger: True
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: False
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Dim ConexionAInternet As Boolean
+	Dim tiempo As Timer
+	Dim Conexion As MLwifi
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("SplashScreen")
+	CheckForWiFi
+	If (ConexionAInternet= False) Then
+		Activity.Finish
+	Else
+		tiempo.Initialize("tiempo",5000)
+		tiempo.Enabled=True
+	End If
+	
+End Sub
+
+Sub CheckForWiFi
+	If Conexion.isOnLine=False Then
+		ToastMessageShow("No tiene conexion a internet",True)
+		ConexionAInternet=False
+	Else
+		ToastMessageShow("Tiene conexion a internet",True)
+		ConexionAInternet=True
+	End If
+End Sub
+
+Sub tiempo_Tick
+	StartActivity(Principal)
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
