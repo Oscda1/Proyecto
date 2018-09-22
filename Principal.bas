@@ -96,9 +96,9 @@ End Sub
 
 
 Sub PlusEvento_Click
-	StartActivity("CrearEvento")	
+	StartActivity("CrearEvento")
 End Sub
 
 Sub Settings_Click
-	
+	StartActivity(ConfHorarios)
 End Sub

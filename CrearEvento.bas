@@ -28,6 +28,9 @@ Sub Globals
 	Private PerfilesEvento As Spinner
 	Private Etiqueta_Nombre_Archivo As Label
 	Private btnDate As Button
+	Private Perfiles As Spinner
+	Private Conferencias As Panel
+	Private BotonGrupos As Button
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -86,6 +89,15 @@ Sub PerfilesEvento_ItemClick (Position As Int, Value As Object)
 	End Select
 End Sub
 
-Sub Etiqueta_Nombre_Archivo_Click
-	
+Sub Perfiles_ItemClick (Position As Int, Value As Object)
+	Select(Position)
+		Case 0
+			Conferencias.Visible=True
+		Case 1
+			
+	End Select
+End Sub
+
+Sub BotonGrupos_Click
+	StartActivity(SeleccionarGrupos)
 End Sub
