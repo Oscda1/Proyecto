@@ -33,7 +33,7 @@ public class crearevento extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new BA(this.getApplicationContext(), null, null, "com.ServicioSocial", "com.ServicioSocial.crearevento");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "com.ServicioSocial", "com.ServicioSocial.crearevento");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -328,18 +328,7 @@ public class crearevento extends Activity implements B4AActivity{
             
     }
 
-public anywheresoftware.b4a.keywords.Common __c = null;
-public static anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _bmp = null;
-public anywheresoftware.b4a.objects.ImageViewWrapper _barratitulo = null;
-public anywheresoftware.b4a.objects.ImageViewWrapper _imagenregresar = null;
-public anywheresoftware.b4a.objects.FloatLabeledEditTextWrapper _nombreeventoedittext = null;
-public anywheresoftware.b4a.objects.ButtonWrapper _button1 = null;
-public anywheresoftware.b4a.objects.LabelWrapper _labeldate = null;
-public anywheresoftware.b4a.objects.LabelWrapper _labeltime = null;
-public anywheresoftware.b4a.objects.ButtonWrapper _btntime = null;
-public com.ServicioSocial.main _main = null;
-public com.ServicioSocial.starter _starter = null;
-public com.ServicioSocial.principal _principal = null;
+
 
 public static void initializeProcessGlobals() {
              try {
@@ -348,100 +337,213 @@ public static void initializeProcessGlobals() {
                 throw new RuntimeException(e);
             }
 }
+public anywheresoftware.b4a.keywords.Common __c = null;
+public static anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _bmp = null;
+public static anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _bmp2 = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _barratitulo = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _imagenregresar = null;
+public anywheresoftware.b4a.objects.FloatLabeledEditTextWrapper _nombreeventoedittext = null;
+public anywheresoftware.b4a.objects.LabelWrapper _labeldate = null;
+public anywheresoftware.b4a.objects.LabelWrapper _labeltime = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _btntime = null;
+public anywheresoftware.b4a.objects.SpinnerWrapper _perfilesevento = null;
+public anywheresoftware.b4a.objects.LabelWrapper _etiqueta_nombre_archivo = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _btndate = null;
+public anywheresoftware.b4a.objects.SpinnerWrapper _perfiles = null;
+public anywheresoftware.b4a.objects.PanelWrapper _conferencias = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _botongrupos = null;
+public com.ServicioSocial.main _main = null;
+public com.ServicioSocial.starter _starter = null;
+public com.ServicioSocial.principal _principal = null;
+public com.ServicioSocial.confhorarios _confhorarios = null;
+public com.ServicioSocial.seleccionargrupos _seleccionargrupos = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 24;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 26;BA.debugLine="Activity.LoadLayout(\"NuevoEventoLayout\")";
+RDebugUtils.currentModule="crearevento";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
+RDebugUtils.currentLine=1441792;
+ //BA.debugLineNum = 1441792;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=1441794;
+ //BA.debugLineNum = 1441794;BA.debugLine="Activity.LoadLayout(\"NuevoEventoLayout\")";
 mostCurrent._activity.LoadLayout("NuevoEventoLayout",mostCurrent.activityBA);
- //BA.debugLineNum = 27;BA.debugLine="BarraTitulo.Bitmap=LoadBitmap(File.DirAssets,\"Bar";
+RDebugUtils.currentLine=1441795;
+ //BA.debugLineNum = 1441795;BA.debugLine="Bmp2=LoadBitmap(File.DirAssets,\"Boton_Fecha y hor";
+_bmp2 = anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Boton_Fecha y hora.png");
+RDebugUtils.currentLine=1441796;
+ //BA.debugLineNum = 1441796;BA.debugLine="BarraTitulo.Bitmap=LoadBitmap(File.DirAssets,\"Bar";
 mostCurrent._barratitulo.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Barra_Texto_titulo.png").getObject()));
- //BA.debugLineNum = 28;BA.debugLine="ImagenRegresar.Bitmap=LoadBitmap(File.DirAssets,\"";
+RDebugUtils.currentLine=1441797;
+ //BA.debugLineNum = 1441797;BA.debugLine="ImagenRegresar.Bitmap=LoadBitmap(File.DirAssets,\"";
 mostCurrent._imagenregresar.setBitmap((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Boton_retroceso.png").getObject()));
- //BA.debugLineNum = 29;BA.debugLine="NombreEventoEditText.SetBackgroundImage(LoadBitma";
+RDebugUtils.currentLine=1441798;
+ //BA.debugLineNum = 1441798;BA.debugLine="NombreEventoEditText.SetBackgroundImage(LoadBitma";
 mostCurrent._nombreeventoedittext.SetBackgroundImage((android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.LoadBitmap(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Barra_TextoNombre y Conferencista.png").getObject()));
- //BA.debugLineNum = 30;BA.debugLine="Bmp.Initialize(File.DirAssets,\"Boton_fecha y hora";
+RDebugUtils.currentLine=1441799;
+ //BA.debugLineNum = 1441799;BA.debugLine="Bmp.Initialize(File.DirAssets,\"Boton_fecha y hora";
 _bmp.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Boton_fecha y hora.png");
- //BA.debugLineNum = 31;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1441800;
+ //BA.debugLineNum = 1441800;BA.debugLine="PerfilesEvento.Add(\"Feria de la salud\")";
+mostCurrent._perfilesevento.Add("Feria de la salud");
+RDebugUtils.currentLine=1441801;
+ //BA.debugLineNum = 1441801;BA.debugLine="PerfilesEvento.Add(\"Feria de universidades\")";
+mostCurrent._perfilesevento.Add("Feria de universidades");
+RDebugUtils.currentLine=1441802;
+ //BA.debugLineNum = 1441802;BA.debugLine="PerfilesEvento.Add(\"Aniversario\")";
+mostCurrent._perfilesevento.Add("Aniversario");
+RDebugUtils.currentLine=1441803;
+ //BA.debugLineNum = 1441803;BA.debugLine="PerfilesEvento.Add(\"Rendicion de cuentas\")";
+mostCurrent._perfilesevento.Add("Rendicion de cuentas");
+RDebugUtils.currentLine=1441804;
+ //BA.debugLineNum = 1441804;BA.debugLine="PerfilesEvento.Add(\"Estadias\")";
+mostCurrent._perfilesevento.Add("Estadias");
+RDebugUtils.currentLine=1441805;
+ //BA.debugLineNum = 1441805;BA.debugLine="PerfilesEvento.Add(\"Festival navideño\")";
+mostCurrent._perfilesevento.Add("Festival navideño");
+RDebugUtils.currentLine=1441806;
+ //BA.debugLineNum = 1441806;BA.debugLine="PerfilesEvento.Add(\"Conferencia\")";
+mostCurrent._perfilesevento.Add("Conferencia");
+RDebugUtils.currentLine=1441807;
+ //BA.debugLineNum = 1441807;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 49;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 51;BA.debugLine="End Sub";
+RDebugUtils.currentModule="crearevento";
+RDebugUtils.currentLine=1638400;
+ //BA.debugLineNum = 1638400;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=1638402;
+ //BA.debugLineNum = 1638402;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 45;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 47;BA.debugLine="End Sub";
+RDebugUtils.currentModule="crearevento";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
+RDebugUtils.currentLine=1572864;
+ //BA.debugLineNum = 1572864;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=1572866;
+ //BA.debugLineNum = 1572866;BA.debugLine="End Sub";
+return "";
+}
+public static String  _botongrupos_click() throws Exception{
+RDebugUtils.currentModule="crearevento";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "botongrupos_click"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "botongrupos_click", null));}
+RDebugUtils.currentLine=1900544;
+ //BA.debugLineNum = 1900544;BA.debugLine="Sub BotonGrupos_Click";
+RDebugUtils.currentLine=1900545;
+ //BA.debugLineNum = 1900545;BA.debugLine="StartActivity(SeleccionarGrupos)";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._seleccionargrupos.getObject()));
+RDebugUtils.currentLine=1900546;
+ //BA.debugLineNum = 1900546;BA.debugLine="End Sub";
+return "";
+}
+public static String  _btndate_click() throws Exception{
+RDebugUtils.currentModule="crearevento";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "btndate_click"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btndate_click", null));}
+String _ret = "";
+anywheresoftware.b4a.agraham.dialogs.InputDialog.DateDialog _dd = null;
+RDebugUtils.currentLine=1703936;
+ //BA.debugLineNum = 1703936;BA.debugLine="Sub btnDate_Click";
+RDebugUtils.currentLine=1703937;
+ //BA.debugLineNum = 1703937;BA.debugLine="Dim ret As String";
+_ret = "";
+RDebugUtils.currentLine=1703938;
+ //BA.debugLineNum = 1703938;BA.debugLine="Dim Dd As DateDialog";
+_dd = new anywheresoftware.b4a.agraham.dialogs.InputDialog.DateDialog();
+RDebugUtils.currentLine=1703939;
+ //BA.debugLineNum = 1703939;BA.debugLine="Dd.Year = DateTime.GetYear(DateTime.Now)";
+_dd.setYear(anywheresoftware.b4a.keywords.Common.DateTime.GetYear(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
+RDebugUtils.currentLine=1703940;
+ //BA.debugLineNum = 1703940;BA.debugLine="Dd.Month = DateTime.GetMonth(DateTime.Now)";
+_dd.setMonth(anywheresoftware.b4a.keywords.Common.DateTime.GetMonth(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
+RDebugUtils.currentLine=1703941;
+ //BA.debugLineNum = 1703941;BA.debugLine="Dd.DayOfMonth = DateTime.GetDayOfMonth(DateTime.N";
+_dd.setDayOfMonth(anywheresoftware.b4a.keywords.Common.DateTime.GetDayOfMonth(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
+RDebugUtils.currentLine=1703942;
+ //BA.debugLineNum = 1703942;BA.debugLine="ret = Dd.Show(\"Seleccione una Fecha\", \"SaveItGood";
+_ret = BA.NumberToString(_dd.Show("Seleccione una Fecha","SaveItGood","Seleccionar","Cancelar","",mostCurrent.activityBA,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)));
+RDebugUtils.currentLine=1703943;
+ //BA.debugLineNum = 1703943;BA.debugLine="ToastMessageShow(ret & \" : \" & Dd.DayOfMonth & \"/";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_ret+" : "+BA.NumberToString(_dd.getDayOfMonth())+"/"+BA.NumberToString(_dd.getMonth())+"/"+BA.NumberToString(_dd.getYear())),anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=1703944;
+ //BA.debugLineNum = 1703944;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btntime_click() throws Exception{
+RDebugUtils.currentModule="crearevento";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "btntime_click"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btntime_click", null));}
 String _ret = "";
 anywheresoftware.b4a.agraham.dialogs.InputDialog.TimeDialog _td = null;
 String _txt = "";
- //BA.debugLineNum = 33;BA.debugLine="Sub btnTime_Click";
- //BA.debugLineNum = 34;BA.debugLine="Dim ret As String";
+RDebugUtils.currentLine=1507328;
+ //BA.debugLineNum = 1507328;BA.debugLine="Sub btnTime_Click";
+RDebugUtils.currentLine=1507329;
+ //BA.debugLineNum = 1507329;BA.debugLine="Dim ret As String";
 _ret = "";
- //BA.debugLineNum = 35;BA.debugLine="Dim td As TimeDialog";
+RDebugUtils.currentLine=1507330;
+ //BA.debugLineNum = 1507330;BA.debugLine="Dim td As TimeDialog";
 _td = new anywheresoftware.b4a.agraham.dialogs.InputDialog.TimeDialog();
- //BA.debugLineNum = 36;BA.debugLine="Dim txt As String";
+RDebugUtils.currentLine=1507331;
+ //BA.debugLineNum = 1507331;BA.debugLine="Dim txt As String";
 _txt = "";
- //BA.debugLineNum = 37;BA.debugLine="td.Hour = DateTime.GetHour(DateTime.Now)";
+RDebugUtils.currentLine=1507332;
+ //BA.debugLineNum = 1507332;BA.debugLine="td.Hour = DateTime.GetHour(DateTime.Now)";
 _td.setHour(anywheresoftware.b4a.keywords.Common.DateTime.GetHour(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
- //BA.debugLineNum = 38;BA.debugLine="td.Minute = DateTime.GetMinute(DateTime.Now)";
+RDebugUtils.currentLine=1507333;
+ //BA.debugLineNum = 1507333;BA.debugLine="td.Minute = DateTime.GetMinute(DateTime.Now)";
 _td.setMinute(anywheresoftware.b4a.keywords.Common.DateTime.GetMinute(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
- //BA.debugLineNum = 39;BA.debugLine="td.Is24Hours = True";
+RDebugUtils.currentLine=1507334;
+ //BA.debugLineNum = 1507334;BA.debugLine="td.Is24Hours = True";
 _td.setIs24Hours(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 40;BA.debugLine="ret = td.Show(\"Seleccione la hora:\", \"B4A Time Di";
-_ret = BA.NumberToString(_td.Show("Seleccione la hora:","B4A Time Dialog","Yes","Cancel","No",mostCurrent.activityBA,(android.graphics.Bitmap)(_bmp.getObject())));
- //BA.debugLineNum = 41;BA.debugLine="ToastMessageShow(ret & \" : \" & td.Hour & \":\" & td";
+RDebugUtils.currentLine=1507335;
+ //BA.debugLineNum = 1507335;BA.debugLine="ret = td.Show(\"Seleccione la hora:\", \"SaveItGood\"";
+_ret = BA.NumberToString(_td.Show("Seleccione la hora:","SaveItGood","Si","Cancelar","",mostCurrent.activityBA,(android.graphics.Bitmap)(_bmp.getObject())));
+RDebugUtils.currentLine=1507336;
+ //BA.debugLineNum = 1507336;BA.debugLine="ToastMessageShow(ret & \" : \" & td.Hour & \":\" & td";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_ret+" : "+BA.NumberToString(_td.getHour())+":"+BA.NumberToString(_td.getMinute())),anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 42;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1507337;
+ //BA.debugLineNum = 1507337;BA.debugLine="End Sub";
 return "";
 }
-public static String  _button1_click() throws Exception{
-String _ret = "";
-anywheresoftware.b4a.agraham.dialogs.InputDialog.DateDialog _dd = null;
- //BA.debugLineNum = 54;BA.debugLine="Sub Button1_Click";
- //BA.debugLineNum = 55;BA.debugLine="Dim ret As String";
-_ret = "";
- //BA.debugLineNum = 56;BA.debugLine="Dim Dd As DateDialog";
-_dd = new anywheresoftware.b4a.agraham.dialogs.InputDialog.DateDialog();
- //BA.debugLineNum = 57;BA.debugLine="Dd.Year = DateTime.GetYear(DateTime.Now)";
-_dd.setYear(anywheresoftware.b4a.keywords.Common.DateTime.GetYear(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
- //BA.debugLineNum = 58;BA.debugLine="Dd.Month = DateTime.GetMonth(DateTime.Now)";
-_dd.setMonth(anywheresoftware.b4a.keywords.Common.DateTime.GetMonth(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
- //BA.debugLineNum = 59;BA.debugLine="Dd.DayOfMonth = DateTime.GetDayOfMonth(DateTime.N";
-_dd.setDayOfMonth(anywheresoftware.b4a.keywords.Common.DateTime.GetDayOfMonth(anywheresoftware.b4a.keywords.Common.DateTime.getNow()));
- //BA.debugLineNum = 60;BA.debugLine="ret = Dd.Show(\"\", \"Seleccione una Fecha\", \"Selecc";
-_ret = BA.NumberToString(_dd.Show("","Seleccione una Fecha","Seleccionar","Cancelar","",mostCurrent.activityBA,(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)));
- //BA.debugLineNum = 61;BA.debugLine="ToastMessageShow(ret & \" : \" & Dd.DayOfMonth & \"/";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence(_ret+" : "+BA.NumberToString(_dd.getDayOfMonth())+"/"+BA.NumberToString(_dd.getMonth())+"/"+BA.NumberToString(_dd.getYear())),anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 62;BA.debugLine="End Sub";
+public static String  _perfiles_itemclick(int _position,Object _value) throws Exception{
+RDebugUtils.currentModule="crearevento";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "perfiles_itemclick"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "perfiles_itemclick", new Object[] {_position,_value}));}
+RDebugUtils.currentLine=1835008;
+ //BA.debugLineNum = 1835008;BA.debugLine="Sub Perfiles_ItemClick (Position As Int, Value As";
+RDebugUtils.currentLine=1835009;
+ //BA.debugLineNum = 1835009;BA.debugLine="Select(Position)";
+switch (BA.switchObjectToInt((_position),(int) (0),(int) (1))) {
+case 0: {
+RDebugUtils.currentLine=1835011;
+ //BA.debugLineNum = 1835011;BA.debugLine="Conferencias.Visible=True";
+mostCurrent._conferencias.setVisible(anywheresoftware.b4a.keywords.Common.True);
+ break; }
+case 1: {
+ break; }
+}
+;
+RDebugUtils.currentLine=1835015;
+ //BA.debugLineNum = 1835015;BA.debugLine="End Sub";
 return "";
 }
-public static String  _globals() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 15;BA.debugLine="Private BarraTitulo As ImageView";
-mostCurrent._barratitulo = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 16;BA.debugLine="Private ImagenRegresar As ImageView";
-mostCurrent._imagenregresar = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 17;BA.debugLine="Private NombreEventoEditText As FloatLabeledEditT";
-mostCurrent._nombreeventoedittext = new anywheresoftware.b4a.objects.FloatLabeledEditTextWrapper();
- //BA.debugLineNum = 18;BA.debugLine="Private Button1 As Button";
-mostCurrent._button1 = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 19;BA.debugLine="Private LabelDate As Label";
-mostCurrent._labeldate = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Private LabelTime As Label";
-mostCurrent._labeltime = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 21;BA.debugLine="Private btnTime As Button";
-mostCurrent._btntime = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 22;BA.debugLine="End Sub";
-return "";
+public static String  _perfilesevento_itemclick(int _position,Object _value) throws Exception{
+RDebugUtils.currentModule="crearevento";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "perfilesevento_itemclick"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "perfilesevento_itemclick", new Object[] {_position,_value}));}
+RDebugUtils.currentLine=1769472;
+ //BA.debugLineNum = 1769472;BA.debugLine="Sub PerfilesEvento_ItemClick (Position As Int, Val";
+RDebugUtils.currentLine=1769473;
+ //BA.debugLineNum = 1769473;BA.debugLine="Select(PerfilesEvento.SelectedIndex)";
+switch (BA.switchObjectToInt((mostCurrent._perfilesevento.getSelectedIndex()),(int) (6))) {
+case 0: {
+ break; }
 }
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 9;BA.debugLine="Dim Bmp As Bitmap";
-_bmp = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
+;
+RDebugUtils.currentLine=1769478;
+ //BA.debugLineNum = 1769478;BA.debugLine="End Sub";
 return "";
 }
 }

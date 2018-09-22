@@ -33,7 +33,7 @@ public class principal extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new BA(this.getApplicationContext(), null, null, "com.ServicioSocial", "com.ServicioSocial.principal");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "com.ServicioSocial", "com.ServicioSocial.principal");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -328,6 +328,15 @@ public class principal extends Activity implements B4AActivity{
             
     }
 
+
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public static String _contenido = "";
 public static String[] _cantidades = null;
@@ -345,167 +354,181 @@ public anywheresoftware.b4a.objects.LabelWrapper _detalleseventos = null;
 public anywheresoftware.b4a.objects.PanelWrapper _eventospanel = null;
 public anywheresoftware.b4a.objects.LabelWrapper _eventos = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _plusevento = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _settings = null;
 public com.ServicioSocial.main _main = null;
 public com.ServicioSocial.starter _starter = null;
 public com.ServicioSocial.crearevento _crearevento = null;
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
+public com.ServicioSocial.confhorarios _confhorarios = null;
+public com.ServicioSocial.seleccionargrupos _seleccionargrupos = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 33;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 35;BA.debugLine="Activity.LoadLayout(\"PrincipalLayout\")";
+RDebugUtils.currentModule="principal";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
+RDebugUtils.currentLine=983040;
+ //BA.debugLineNum = 983040;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=983042;
+ //BA.debugLineNum = 983042;BA.debugLine="Activity.LoadLayout(\"PrincipalLayout\")";
 mostCurrent._activity.LoadLayout("PrincipalLayout",mostCurrent.activityBA);
- //BA.debugLineNum = 36;BA.debugLine="contenido=File.ReadString(File.DirAssets,\"Eventos";
+RDebugUtils.currentLine=983043;
+ //BA.debugLineNum = 983043;BA.debugLine="contenido=File.ReadString(File.DirAssets,\"Eventos";
 _contenido = anywheresoftware.b4a.keywords.Common.File.ReadString(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Eventos.txt");
- //BA.debugLineNum = 37;BA.debugLine="If contenido=\"\" Then";
+RDebugUtils.currentLine=983044;
+ //BA.debugLineNum = 983044;BA.debugLine="If contenido=\"\" Then";
 if ((_contenido).equals("")) { 
- //BA.debugLineNum = 38;BA.debugLine="Eventos.Visible=True";
+RDebugUtils.currentLine=983045;
+ //BA.debugLineNum = 983045;BA.debugLine="Eventos.Visible=True";
 mostCurrent._eventos.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 39;BA.debugLine="EventosPanel.Visible=False";
+RDebugUtils.currentLine=983046;
+ //BA.debugLineNum = 983046;BA.debugLine="EventosPanel.Visible=False";
 mostCurrent._eventospanel.setVisible(anywheresoftware.b4a.keywords.Common.False);
  }else {
- //BA.debugLineNum = 41;BA.debugLine="btm.Initialize(File.DirAssets,\"Barra_Datos_Event";
+RDebugUtils.currentLine=983048;
+ //BA.debugLineNum = 983048;BA.debugLine="btm.Initialize(File.DirAssets,\"Barra_Datos_Event";
 _btm.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"Barra_Datos_Evento.png");
- //BA.debugLineNum = 42;BA.debugLine="DetallesEventos.SetBackgroundImage(btm)";
+RDebugUtils.currentLine=983049;
+ //BA.debugLineNum = 983049;BA.debugLine="DetallesEventos.SetBackgroundImage(btm)";
 mostCurrent._detalleseventos.SetBackgroundImageNew((android.graphics.Bitmap)(_btm.getObject()));
- //BA.debugLineNum = 43;BA.debugLine="Eventos.Visible=False";
+RDebugUtils.currentLine=983050;
+ //BA.debugLineNum = 983050;BA.debugLine="Eventos.Visible=False";
 mostCurrent._eventos.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 44;BA.debugLine="EventosPanel.Visible=True";
+RDebugUtils.currentLine=983051;
+ //BA.debugLineNum = 983051;BA.debugLine="EventosPanel.Visible=True";
 mostCurrent._eventospanel.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 45;BA.debugLine="cantidades=Regex.Split(\"-\", contenido)";
+RDebugUtils.currentLine=983052;
+ //BA.debugLineNum = 983052;BA.debugLine="cantidades=Regex.Split(\"-\", contenido)";
 _cantidades = anywheresoftware.b4a.keywords.Common.Regex.Split("-",_contenido);
- //BA.debugLineNum = 46;BA.debugLine="Sale=False";
+RDebugUtils.currentLine=983053;
+ //BA.debugLineNum = 983053;BA.debugLine="Sale=False";
 _sale = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 47;BA.debugLine="Contador=-1";
+RDebugUtils.currentLine=983054;
+ //BA.debugLineNum = 983054;BA.debugLine="Contador=-1";
 _contador = (int) (-1);
- //BA.debugLineNum = 48;BA.debugLine="Do While Sale=False";
+RDebugUtils.currentLine=983055;
+ //BA.debugLineNum = 983055;BA.debugLine="Do While Sale=False";
 while (_sale==anywheresoftware.b4a.keywords.Common.False) {
- //BA.debugLineNum = 49;BA.debugLine="Contador=Contador+1";
+RDebugUtils.currentLine=983056;
+ //BA.debugLineNum = 983056;BA.debugLine="Contador=Contador+1";
 _contador = (int) (_contador+1);
- //BA.debugLineNum = 50;BA.debugLine="Select Contador";
+RDebugUtils.currentLine=983057;
+ //BA.debugLineNum = 983057;BA.debugLine="Select Contador";
 switch (_contador) {
 case 0: {
- //BA.debugLineNum = 52;BA.debugLine="NombreEvento=cantidades(Contador)";
+RDebugUtils.currentLine=983059;
+ //BA.debugLineNum = 983059;BA.debugLine="NombreEvento=cantidades(Contador)";
 _nombreevento = _cantidades[_contador];
  break; }
 case 1: {
- //BA.debugLineNum = 54;BA.debugLine="FechaEvento=cantidades(Contador)";
+RDebugUtils.currentLine=983061;
+ //BA.debugLineNum = 983061;BA.debugLine="FechaEvento=cantidades(Contador)";
 _fechaevento = _cantidades[_contador];
  break; }
 case 2: {
- //BA.debugLineNum = 56;BA.debugLine="HoraEvento=cantidades(Contador)";
+RDebugUtils.currentLine=983063;
+ //BA.debugLineNum = 983063;BA.debugLine="HoraEvento=cantidades(Contador)";
 _horaevento = _cantidades[_contador];
  break; }
 case 3: {
- //BA.debugLineNum = 58;BA.debugLine="TipoEvento=cantidades(Contador)";
+RDebugUtils.currentLine=983065;
+ //BA.debugLineNum = 983065;BA.debugLine="TipoEvento=cantidades(Contador)";
 _tipoevento = _cantidades[_contador];
  break; }
 case 4: {
- //BA.debugLineNum = 60;BA.debugLine="NombreDocumento=cantidades(Contador)";
+RDebugUtils.currentLine=983067;
+ //BA.debugLineNum = 983067;BA.debugLine="NombreDocumento=cantidades(Contador)";
 _nombredocumento = _cantidades[_contador];
  break; }
 case 5: {
- //BA.debugLineNum = 62;BA.debugLine="Conferencista=cantidades(Contador)";
+RDebugUtils.currentLine=983069;
+ //BA.debugLineNum = 983069;BA.debugLine="Conferencista=cantidades(Contador)";
 _conferencista = _cantidades[_contador];
  break; }
 case 6: {
- //BA.debugLineNum = 64;BA.debugLine="Grupos=Regex.Split(\";\",cantidades(Contador))";
+RDebugUtils.currentLine=983071;
+ //BA.debugLineNum = 983071;BA.debugLine="Grupos=Regex.Split(\";\",cantidades(Contador))";
 _grupos = anywheresoftware.b4a.keywords.Common.Regex.Split(";",_cantidades[_contador]);
- //BA.debugLineNum = 65;BA.debugLine="Sale=True";
+RDebugUtils.currentLine=983072;
+ //BA.debugLineNum = 983072;BA.debugLine="Sale=True";
 _sale = anywheresoftware.b4a.keywords.Common.True;
  break; }
 }
 ;
  }
 ;
- //BA.debugLineNum = 68;BA.debugLine="Sale=False";
+RDebugUtils.currentLine=983075;
+ //BA.debugLineNum = 983075;BA.debugLine="Sale=False";
 _sale = anywheresoftware.b4a.keywords.Common.False;
- //BA.debugLineNum = 69;BA.debugLine="Contador=-1";
+RDebugUtils.currentLine=983076;
+ //BA.debugLineNum = 983076;BA.debugLine="Contador=-1";
 _contador = (int) (-1);
- //BA.debugLineNum = 70;BA.debugLine="DetallesEventos.Text=\"El evento \"&NombreEvento&\"";
+RDebugUtils.currentLine=983077;
+ //BA.debugLineNum = 983077;BA.debugLine="DetallesEventos.Text=\"El evento \"&NombreEvento&\"";
 mostCurrent._detalleseventos.setText(BA.ObjectToCharSequence("El evento "+_nombreevento+" sera el dia "+_fechaevento+" a las "+_horaevento+" sera un evento de "+_tipoevento+" el documento es "+_nombredocumento+" el conferencista sera "+_conferencista+" y los grupos implicados seran "+anywheresoftware.b4a.keywords.Common.CRLF));
- //BA.debugLineNum = 71;BA.debugLine="Do While Sale=False";
+RDebugUtils.currentLine=983078;
+ //BA.debugLineNum = 983078;BA.debugLine="Do While Sale=False";
 while (_sale==anywheresoftware.b4a.keywords.Common.False) {
- //BA.debugLineNum = 72;BA.debugLine="Try";
-try { //BA.debugLineNum = 73;BA.debugLine="Contador=Contador+1";
+RDebugUtils.currentLine=983079;
+ //BA.debugLineNum = 983079;BA.debugLine="Try";
+try {RDebugUtils.currentLine=983080;
+ //BA.debugLineNum = 983080;BA.debugLine="Contador=Contador+1";
 _contador = (int) (_contador+1);
- //BA.debugLineNum = 74;BA.debugLine="DetallesEventos.Text=DetallesEventos.Text&Grup";
+RDebugUtils.currentLine=983081;
+ //BA.debugLineNum = 983081;BA.debugLine="DetallesEventos.Text=DetallesEventos.Text&Grup";
 mostCurrent._detalleseventos.setText(BA.ObjectToCharSequence(mostCurrent._detalleseventos.getText()+_grupos[_contador]+anywheresoftware.b4a.keywords.Common.CRLF));
  } 
        catch (Exception e42) {
-			processBA.setLastException(e42); //BA.debugLineNum = 76;BA.debugLine="Sale=True";
+			processBA.setLastException(e42);RDebugUtils.currentLine=983083;
+ //BA.debugLineNum = 983083;BA.debugLine="Sale=True";
 _sale = anywheresoftware.b4a.keywords.Common.True;
  };
  }
 ;
  };
- //BA.debugLineNum = 82;BA.debugLine="End Sub";
+RDebugUtils.currentLine=983087;
+ //BA.debugLineNum = 983087;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 88;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 90;BA.debugLine="End Sub";
+RDebugUtils.currentModule="principal";
+RDebugUtils.currentLine=1114112;
+ //BA.debugLineNum = 1114112;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=1114114;
+ //BA.debugLineNum = 1114114;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 84;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 86;BA.debugLine="End Sub";
-return "";
-}
-public static String  _globals() throws Exception{
- //BA.debugLineNum = 23;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 27;BA.debugLine="Private DetallesEventos As Label";
-mostCurrent._detalleseventos = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 28;BA.debugLine="Private EventosPanel As Panel";
-mostCurrent._eventospanel = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 29;BA.debugLine="Private Eventos As Label";
-mostCurrent._eventos = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 30;BA.debugLine="Private PlusEvento As Button";
-mostCurrent._plusevento = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 31;BA.debugLine="End Sub";
+RDebugUtils.currentModule="principal";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
+RDebugUtils.currentLine=1048576;
+ //BA.debugLineNum = 1048576;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=1048578;
+ //BA.debugLineNum = 1048578;BA.debugLine="End Sub";
 return "";
 }
 public static String  _plusevento_click() throws Exception{
- //BA.debugLineNum = 93;BA.debugLine="Sub PlusEvento_Click";
- //BA.debugLineNum = 94;BA.debugLine="StartActivity(\"CrearEvento\")";
+RDebugUtils.currentModule="principal";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "plusevento_click"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "plusevento_click", null));}
+RDebugUtils.currentLine=1179648;
+ //BA.debugLineNum = 1179648;BA.debugLine="Sub PlusEvento_Click";
+RDebugUtils.currentLine=1179649;
+ //BA.debugLineNum = 1179649;BA.debugLine="StartActivity(\"CrearEvento\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("CrearEvento"));
- //BA.debugLineNum = 95;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1179650;
+ //BA.debugLineNum = 1179650;BA.debugLine="End Sub";
 return "";
 }
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 9;BA.debugLine="Dim contenido As String";
-_contenido = "";
- //BA.debugLineNum = 10;BA.debugLine="Dim cantidades() As String";
-_cantidades = new String[(int) (0)];
-java.util.Arrays.fill(_cantidades,"");
- //BA.debugLineNum = 11;BA.debugLine="Dim Sale As Boolean";
-_sale = false;
- //BA.debugLineNum = 12;BA.debugLine="Dim Contador As Int";
-_contador = 0;
- //BA.debugLineNum = 13;BA.debugLine="Dim NombreEvento As String";
-_nombreevento = "";
- //BA.debugLineNum = 14;BA.debugLine="Dim FechaEvento As String";
-_fechaevento = "";
- //BA.debugLineNum = 15;BA.debugLine="Dim HoraEvento As String";
-_horaevento = "";
- //BA.debugLineNum = 16;BA.debugLine="Dim NombreDocumento As String";
-_nombredocumento = "";
- //BA.debugLineNum = 17;BA.debugLine="Dim Conferencista As String";
-_conferencista = "";
- //BA.debugLineNum = 18;BA.debugLine="Dim TipoEvento As String";
-_tipoevento = "";
- //BA.debugLineNum = 19;BA.debugLine="Dim Grupos() As String";
-_grupos = new String[(int) (0)];
-java.util.Arrays.fill(_grupos,"");
- //BA.debugLineNum = 20;BA.debugLine="Dim btm As Bitmap";
-_btm = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
- //BA.debugLineNum = 21;BA.debugLine="End Sub";
+public static String  _settings_click() throws Exception{
+RDebugUtils.currentModule="principal";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "settings_click"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "settings_click", null));}
+RDebugUtils.currentLine=1245184;
+ //BA.debugLineNum = 1245184;BA.debugLine="Sub Settings_Click";
+RDebugUtils.currentLine=1245185;
+ //BA.debugLineNum = 1245185;BA.debugLine="StartActivity(ConfHorarios)";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._confhorarios.getObject()));
+RDebugUtils.currentLine=1245186;
+ //BA.debugLineNum = 1245186;BA.debugLine="End Sub";
 return "";
 }
 }

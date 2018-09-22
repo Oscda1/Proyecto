@@ -14,8 +14,8 @@ import anywheresoftware.b4a.B4AUncaughtException;
 import anywheresoftware.b4a.debug.*;
 import java.lang.ref.WeakReference;
 
-public class main extends Activity implements B4AActivity{
-	public static main mostCurrent;
+public class confhorarios extends Activity implements B4AActivity{
+	public static confhorarios mostCurrent;
 	static boolean afterFirstLayout;
 	static boolean isFirst = true;
     private static boolean processGlobalsRun = false;
@@ -25,7 +25,7 @@ public class main extends Activity implements B4AActivity{
     ActivityWrapper _activity;
     java.util.ArrayList<B4AMenuItem> menuItems;
 	public static final boolean fullScreen = false;
-	public static final boolean includeTitle = false;
+	public static final boolean includeTitle = true;
     public static WeakReference<Activity> previousOne;
 
 	@Override
@@ -33,7 +33,7 @@ public class main extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "com.ServicioSocial", "com.ServicioSocial.main");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "com.ServicioSocial", "com.ServicioSocial.confhorarios");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -42,7 +42,7 @@ public class main extends Activity implements B4AActivity{
 		else if (previousOne != null) {
 			Activity p = previousOne.get();
 			if (p != null && p != this) {
-                BA.LogInfo("Killing previous instance (main).");
+                BA.LogInfo("Killing previous instance (confhorarios).");
 				p.finish();
 			}
 		}
@@ -85,7 +85,7 @@ public class main extends Activity implements B4AActivity{
 	private void afterFirstLayout() {
         if (this != mostCurrent)
 			return;
-		activityBA = new BA(this, layout, processBA, "com.ServicioSocial", "com.ServicioSocial.main");
+		activityBA = new BA(this, layout, processBA, "com.ServicioSocial", "com.ServicioSocial.confhorarios");
         
         processBA.sharedProcessBA.activityBA = new java.lang.ref.WeakReference<BA>(activityBA);
         anywheresoftware.b4a.objects.ViewWrapper.lastId = 0;
@@ -94,19 +94,19 @@ public class main extends Activity implements B4AActivity{
         if (BA.isShellModeRuntimeCheck(processBA)) {
 			if (isFirst)
 				processBA.raiseEvent2(null, true, "SHELL", false);
-			processBA.raiseEvent2(null, true, "CREATE", true, "com.ServicioSocial.main", processBA, activityBA, _activity, anywheresoftware.b4a.keywords.Common.Density, mostCurrent);
+			processBA.raiseEvent2(null, true, "CREATE", true, "com.ServicioSocial.confhorarios", processBA, activityBA, _activity, anywheresoftware.b4a.keywords.Common.Density, mostCurrent);
 			_activity.reinitializeForShell(activityBA, "activity");
 		}
         initializeProcessGlobals();		
         initializeGlobals();
         
-        BA.LogInfo("** Activity (main) Create, isFirst = " + isFirst + " **");
+        BA.LogInfo("** Activity (confhorarios) Create, isFirst = " + isFirst + " **");
         processBA.raiseEvent2(null, true, "activity_create", false, isFirst);
 		isFirst = false;
 		if (this != mostCurrent)
 			return;
         processBA.setActivityPaused(false);
-        BA.LogInfo("** Activity (main) Resume **");
+        BA.LogInfo("** Activity (confhorarios) Resume **");
         processBA.raiseEvent(null, "activity_resume");
         if (android.os.Build.VERSION.SDK_INT >= 11) {
 			try {
@@ -195,7 +195,7 @@ public class main extends Activity implements B4AActivity{
 		}
 	}
     public static Class<?> getObject() {
-		return main.class;
+		return confhorarios.class;
 	}
     private Boolean onKeySubExist = null;
     private Boolean onKeyUpSubExist = null;
@@ -266,7 +266,7 @@ public class main extends Activity implements B4AActivity{
         if (this != mostCurrent)
 			return;
 		anywheresoftware.b4a.Msgbox.dismiss(true);
-        BA.LogInfo("** Activity (main) Pause, UserClosed = " + activityBA.activity.isFinishing() + " **");
+        BA.LogInfo("** Activity (confhorarios) Pause, UserClosed = " + activityBA.activity.isFinishing() + " **");
         if (mostCurrent != null)
             processBA.raiseEvent2(_activity, true, "activity_pause", false, activityBA.activity.isFinishing());		
         processBA.setActivityPaused(true);
@@ -300,11 +300,11 @@ public class main extends Activity implements B4AActivity{
     		this.activity = new WeakReference<Activity>(activity);
     	}
 		public void run() {
-            main mc = mostCurrent;
+            confhorarios mc = mostCurrent;
 			if (mc == null || mc != activity.get())
 				return;
 			processBA.setActivityPaused(false);
-            BA.LogInfo("** Activity (main) Resume **");
+            BA.LogInfo("** Activity (confhorarios) Resume **");
             if (mc != mostCurrent)
                 return;
 		    processBA.raiseEvent(mc._activity, "activity_resume", (Object[])null);
@@ -331,191 +331,64 @@ public class main extends Activity implements B4AActivity{
 
 
 public static void initializeProcessGlobals() {
-    
-    if (main.processGlobalsRun == false) {
-	    main.processGlobalsRun = true;
-		try {
-		        		
-        } catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-    }
-}
-public static boolean isAnyActivityVisible() {
-    boolean vis = false;
-vis = vis | (main.mostCurrent != null);
-vis = vis | (principal.mostCurrent != null);
-vis = vis | (crearevento.mostCurrent != null);
-vis = vis | (confhorarios.mostCurrent != null);
-vis = vis | (seleccionargrupos.mostCurrent != null);
-return vis;}
-
-private static BA killProgramHelper(BA ba) {
-    if (ba == null)
-        return null;
-    anywheresoftware.b4a.BA.SharedProcessBA sharedProcessBA = ba.sharedProcessBA;
-    if (sharedProcessBA == null || sharedProcessBA.activityBA == null)
-        return null;
-    return sharedProcessBA.activityBA.get();
-}
-public static void killProgram() {
-     {
-            Activity __a = null;
-            if (main.previousOne != null) {
-				__a = main.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(main.mostCurrent == null ? null : main.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
-            if (__a != null)
-				__a.finish();}
-
-BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
- {
-            Activity __a = null;
-            if (principal.previousOne != null) {
-				__a = principal.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(principal.mostCurrent == null ? null : principal.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (crearevento.previousOne != null) {
-				__a = crearevento.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(crearevento.mostCurrent == null ? null : crearevento.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (confhorarios.previousOne != null) {
-				__a = confhorarios.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(confhorarios.mostCurrent == null ? null : confhorarios.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (seleccionargrupos.previousOne != null) {
-				__a = seleccionargrupos.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(seleccionargrupos.mostCurrent == null ? null : seleccionargrupos.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
-public static boolean _conexionainternet = false;
-public static anywheresoftware.b4a.objects.Timer _tiempo = null;
-public static wifi.MLwifi _conexion = null;
+public static anywheresoftware.b4a.objects.WorkbookWrapper _archivo = null;
+public static anywheresoftware.b4a.objects.WorkbookWrapper.SheetWrapper _sheet = null;
+public static anywheresoftware.b4a.objects.WorkbookWrapper.WritableWorkbookWrapper _nuevoarchivo = null;
+public static anywheresoftware.b4a.objects.WorkbookWrapper.WritableSheetWrapper _sheeteditable = null;
+public static anywheresoftware.b4a.objects.WorkbookWrapper.WritableCellWrapper _celda = null;
+public com.ServicioSocial.main _main = null;
 public com.ServicioSocial.starter _starter = null;
 public com.ServicioSocial.principal _principal = null;
 public com.ServicioSocial.crearevento _crearevento = null;
-public com.ServicioSocial.confhorarios _confhorarios = null;
 public com.ServicioSocial.seleccionargrupos _seleccionargrupos = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="main";
+RDebugUtils.currentModule="confhorarios";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=131072;
- //BA.debugLineNum = 131072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=131073;
- //BA.debugLineNum = 131073;BA.debugLine="Activity.LoadLayout(\"SplashScreen\")";
-mostCurrent._activity.LoadLayout("SplashScreen",mostCurrent.activityBA);
-RDebugUtils.currentLine=131074;
- //BA.debugLineNum = 131074;BA.debugLine="CheckForWiFi";
-_checkforwifi();
-RDebugUtils.currentLine=131075;
- //BA.debugLineNum = 131075;BA.debugLine="If (ConexionAInternet= False) Then";
-if ((_conexionainternet==anywheresoftware.b4a.keywords.Common.False)) { 
-RDebugUtils.currentLine=131076;
- //BA.debugLineNum = 131076;BA.debugLine="Activity.Finish";
-mostCurrent._activity.Finish();
- }else {
-RDebugUtils.currentLine=131078;
- //BA.debugLineNum = 131078;BA.debugLine="tiempo.Initialize(\"tiempo\",5000)";
-_tiempo.Initialize(processBA,"tiempo",(long) (5000));
-RDebugUtils.currentLine=131079;
- //BA.debugLineNum = 131079;BA.debugLine="tiempo.Enabled=True";
-_tiempo.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- };
-RDebugUtils.currentLine=131082;
- //BA.debugLineNum = 131082;BA.debugLine="End Sub";
-return "";
-}
-public static String  _checkforwifi() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "checkforwifi"))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "checkforwifi", null));}
-RDebugUtils.currentLine=720896;
- //BA.debugLineNum = 720896;BA.debugLine="Sub CheckForWiFi";
-RDebugUtils.currentLine=720897;
- //BA.debugLineNum = 720897;BA.debugLine="If Conexion.isOnLine=False Then";
-if (_conexion.isOnLine(processBA)==anywheresoftware.b4a.keywords.Common.False) { 
-RDebugUtils.currentLine=720898;
- //BA.debugLineNum = 720898;BA.debugLine="ToastMessageShow(\"No tiene conexion a internet\",";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("No tiene conexion a internet"),anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=720899;
- //BA.debugLineNum = 720899;BA.debugLine="ConexionAInternet=False";
-_conexionainternet = anywheresoftware.b4a.keywords.Common.False;
- }else {
-RDebugUtils.currentLine=720901;
- //BA.debugLineNum = 720901;BA.debugLine="ToastMessageShow(\"Tiene conexion a internet\",Tru";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Tiene conexion a internet"),anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=720902;
- //BA.debugLineNum = 720902;BA.debugLine="ConexionAInternet=True";
-_conexionainternet = anywheresoftware.b4a.keywords.Common.True;
- };
-RDebugUtils.currentLine=720904;
- //BA.debugLineNum = 720904;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2097152;
+ //BA.debugLineNum = 2097152;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=2097153;
+ //BA.debugLineNum = 2097153;BA.debugLine="Archivo.Initialize(File.DirRootExternal,\"book1.xl";
+_archivo.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"book1.xls");
+RDebugUtils.currentLine=2097154;
+ //BA.debugLineNum = 2097154;BA.debugLine="Sheet=Archivo.GetSheet(0)";
+_sheet = _archivo.GetSheet((int) (0));
+RDebugUtils.currentLine=2097155;
+ //BA.debugLineNum = 2097155;BA.debugLine="NuevoArchivo.Initialize(File.DirRootExternal,\"Hor";
+_nuevoarchivo.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal(),"HorarioModificado.xls");
+RDebugUtils.currentLine=2097156;
+ //BA.debugLineNum = 2097156;BA.debugLine="SheetEditable=NuevoArchivo.AddSheet(\"Peliculas\",0";
+_sheeteditable = _nuevoarchivo.AddSheet("Peliculas",(int) (0));
+RDebugUtils.currentLine=2097157;
+ //BA.debugLineNum = 2097157;BA.debugLine="celda.InitializeText(1,0,\"Hola Mundo\")";
+_celda.InitializeText((int) (1),(int) (0),"Hola Mundo");
+RDebugUtils.currentLine=2097158;
+ //BA.debugLineNum = 2097158;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="main";
-RDebugUtils.currentLine=262144;
- //BA.debugLineNum = 262144;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=262146;
- //BA.debugLineNum = 262146;BA.debugLine="End Sub";
+RDebugUtils.currentModule="confhorarios";
+RDebugUtils.currentLine=2490368;
+ //BA.debugLineNum = 2490368;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=2490370;
+ //BA.debugLineNum = 2490370;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="main";
+RDebugUtils.currentModule="confhorarios";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=196608;
- //BA.debugLineNum = 196608;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=196610;
- //BA.debugLineNum = 196610;BA.debugLine="End Sub";
-return "";
-}
-public static String  _tiempo_tick() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "tiempo_tick"))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "tiempo_tick", null));}
-RDebugUtils.currentLine=786432;
- //BA.debugLineNum = 786432;BA.debugLine="Sub tiempo_Tick";
-RDebugUtils.currentLine=786433;
- //BA.debugLineNum = 786433;BA.debugLine="StartActivity(Principal)";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._principal.getObject()));
-RDebugUtils.currentLine=786434;
- //BA.debugLineNum = 786434;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2424832;
+ //BA.debugLineNum = 2424832;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=2424834;
+ //BA.debugLineNum = 2424834;BA.debugLine="End Sub";
 return "";
 }
 }
