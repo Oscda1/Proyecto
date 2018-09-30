@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.ServicioSocial"
+	package="com.Cetis58.SaveIt"
 	android:versionCode="1"
 	android:versionName=""
 	android:installLocation="internalOnly">
@@ -14,17 +14,16 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<application
 		android:icon="@drawable/icon"
-		android:label="SaveItGood"
+		android:label="Save It"
 		android:theme="@style/DarkTheme">
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".main"
-			android:label="SaveItGood"
+			android:label="Save It"
 			android:screenOrientation="unspecified">
 			<intent-filter>
 			   <action android:name="android.intent.action.MAIN" />
@@ -40,28 +39,21 @@
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".principal"
-			android:label="SaveItGood"
+			android:label="Save It"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".crearevento"
-			android:label="SaveItGood"
-			android:screenOrientation="unspecified">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
-			android:name=".confhorarios"
-			android:label="SaveItGood"
+			android:label="Save It"
 			android:screenOrientation="unspecified">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".seleccionargrupos"
-			android:label="SaveItGood"
+			android:label="Save It"
 			android:screenOrientation="unspecified">
 		</activity>
 	</application>

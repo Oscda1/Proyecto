@@ -24,6 +24,10 @@ Sub Process_Globals
 	Dim TipoEvento As String
 	Dim Grupos() As String
 	Dim btm As Bitmap
+	Dim Fondo As Bitmap
+	Dim Agregar As Bitmap
+	Dim AjustesBoton As Bitmap
+	Dim Barra As Bitmap
 End Sub
 
 Sub Globals
@@ -35,18 +39,23 @@ Sub Globals
 	Private Eventos As Label
 	Private PlusEvento As Button
 	Private Settings As Button
+	Private ImagenFondo As ImageView
+	Private Barrita As ImageView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	Activity.LoadLayout("PrincipalLayout")
+	Agregar.Initialize(File.DirAssets,"Boton_Agregado.png")
+	Barra.Initialize(File.DirAssets,"Barra_Titulo.png")
+	AjustesBoton.Initialize(File.DirAssets,"Boton_Ajustes.png")
 	contenido=File.ReadString(File.DirAssets,"Eventos.txt")
 	If contenido="" Then
 		Eventos.Visible=True
 		EventosPanel.Visible=False
 	Else
-		btm.Initialize(File.DirAssets,"Barra_Datos_Evento.png")
-		DetallesEventos.SetBackgroundImage(btm)
+		Fondo.Initialize(File.DirAssets,"Barra_Datos_Evento.png")	
+		ImagenFondo.Bitmap=Fondo
 		Eventos.Visible=False
 		EventosPanel.Visible=True
 		cantidades=Regex.Split("-", contenido)
@@ -78,12 +87,15 @@ Sub Activity_Create(FirstTime As Boolean)
 		Do While Sale=False
 			Try
 				Contador=Contador+1
-				DetallesEventos.Text=DetallesEventos.Text&Grupos(Contador)&CRLF
+				DetallesEventos.Text=DetallesEventos.Text&Grupos(Contador)&", "
 			Catch
 				Sale=True
 			End Try
 		Loop
 	End If
+	PlusEvento.SetBackgroundImage(Agregar)
+	Settings.SetBackgroundImage(AjustesBoton)
+	Barrita.SetBackgroundImage(Barra)
 End Sub
 
 Sub Activity_Resume
@@ -100,5 +112,5 @@ Sub PlusEvento_Click
 End Sub
 
 Sub Settings_Click
-	StartActivity(ConfHorarios)
+	
 End Sub

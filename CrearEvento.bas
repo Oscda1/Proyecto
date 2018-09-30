@@ -14,6 +14,7 @@ Sub Process_Globals
 	'These variables can be accessed from all modules.
 	Dim Bmp As Bitmap
 	Dim Bmp2 As Bitmap
+	Dim Bmp3 As Bitmap
 End Sub
 
 Sub Globals
@@ -25,7 +26,7 @@ Sub Globals
 	Private LabelDate As Label
 	Private LabelTime As Label
 	Private btnTime As Button
-	Private PerfilesEvento As Spinner
+	Private PerfilesEvento As MLComboBox
 	Private Etiqueta_Nombre_Archivo As Label
 	Private btnDate As Button
 	Private Perfiles As Spinner
@@ -41,13 +42,14 @@ Sub Activity_Create(FirstTime As Boolean)
 	ImagenRegresar.Bitmap=LoadBitmap(File.DirAssets,"Boton_retroceso.png")
 	NombreEventoEditText.SetBackgroundImage(LoadBitmap(File.DirAssets,"Barra_TextoNombre y Conferencista.png"))
 	Bmp.Initialize(File.DirAssets,"Boton_fecha y hora.png")
-	PerfilesEvento.Add("Feria de la salud")
-	PerfilesEvento.Add("Feria de universidades")
-	PerfilesEvento.Add("Aniversario")
-	PerfilesEvento.Add("Rendicion de cuentas")
-	PerfilesEvento.Add("Estadias")
-	PerfilesEvento.Add("Festival navideño")
-	PerfilesEvento.Add("Conferencia")
+	Bmp3.Initialize(File.DirAssets,"Boton_Aceptar.png")
+	Perfiles.Add("Feria de la salud")
+	Perfiles.Add("Feria de universidades")
+	Perfiles.Add("Aniversario")
+	Perfiles.Add("Rendicion de cuentas")
+	Perfiles.Add("Estadias")
+	Perfiles.Add("Festival navideño")
+	Perfiles.Add("Conferencia")
 End Sub
 
 Sub btnTime_Click
@@ -81,23 +83,29 @@ Sub btnDate_Click
 	ToastMessageShow(ret & " : " & Dd.DayOfMonth & "/" & Dd.Month & "/" & Dd.Year , False)
 End Sub
 
-Sub PerfilesEvento_ItemClick (Position As Int, Value As Object)
-	Select(PerfilesEvento.SelectedIndex)
-		Case 6
-			
-			
-	End Select
+Sub BotonGrupos_Click
+	StartActivity(SeleccionarGrupos)
 End Sub
 
 Sub Perfiles_ItemClick (Position As Int, Value As Object)
 	Select(Position)
 		Case 0
-			Conferencias.Visible=True
+			Conferencias.Visible=False
 		Case 1
-			
+			Conferencias.Visible=False
+		Case 2
+			Conferencias.Visible=False
+		Case 3
+			Conferencias.Visible=False
+		Case 4
+			Conferencias.Visible=False
+		Case 5
+			Conferencias.Visible=False
+		Case 6
+			Conferencias.Visible=True
 	End Select
 End Sub
 
-Sub BotonGrupos_Click
-	StartActivity(SeleccionarGrupos)
+Sub ImagenRegresar_Click
+	Activity.Finish
 End Sub

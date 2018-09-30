@@ -1,24 +1,32 @@
-﻿Build1=ServicioSocial,com.ServicioSocial
+﻿Build1=ServicioSocial,com.Cetis58.SaveIt
 File1=Barra_Datos_Evento.png
-File10=HorarioModificado.xlsx
-File11=Horarios.xlsx
-File12=NuevoEventoLayout.bal
-File13=PrincipalLayout.bal
-File14=SplashScreen.bal
+File10=Boton_Retroceso.png
+File11=Eventos.txt
+File12=horariomodificado.xls
+File13=HorarioModificado.xlsx
+File14=Horarios.xlsx
+File15=NuevoEventoLayout.bal
+File16=PrincipalLayout.bal
+File17=SelGrupo.bal
+File18=SplashScreen.bal
 File2=Barra_Texto_titulo.png
 File3=Barra_TextoNombre y Conferencista.png
-File4=book1.xls
-File5=Boton_Aceptar.png
-File6=Boton_Fecha y hora.png
-File7=Boton_Retroceso.png
-File8=Eventos.txt
-File9=horariomodificado.xls
+File4=Barra_Titulo.png
+File5=book1.xls
+File6=Boton_Aceptar.png
+File7=Boton_Agregado.png
+File8=Boton_Ajustes.png
+File9=Boton_Fecha y hora.png
 FileGroup1=Default Group
 FileGroup10=Default Group
 FileGroup11=Default Group
 FileGroup12=Default Group
 FileGroup13=Default Group
 FileGroup14=Default Group
+FileGroup15=Default Group
+FileGroup16=Default Group
+FileGroup17=Default Group
+FileGroup18=Default Group
 FileGroup2=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
@@ -35,21 +43,19 @@ Library3=mlwifi
 Library4=viewsex
 Library5=dialogs
 Library6=stringutils
-Library7=excel
+Library7=mlcombobox
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~'End of default text.~\n~
 Module1=Starter
 Module2=Principal
 Module3=CrearEvento
-Module4=ConfHorarios
-Module5=SeleccionarGrupos
-Module6=Table
-NumberOfFiles=14
+Module4=SeleccionarGrupos
+NumberOfFiles=18
 NumberOfLibraries=7
-NumberOfModules=6
+NumberOfModules=4
 Version=8.3
 @EndOfDesignText@
 	#Region  Project Attributes 
-	#ApplicationLabel: SaveItGood
+	#ApplicationLabel: Save It
 	#VersionCode: 1
 	#VersionName: 
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
